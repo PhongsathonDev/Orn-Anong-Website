@@ -2,9 +2,7 @@ import React, { useState } from 'react';
 import { Offcanvas, Button } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { motion } from 'framer-motion';
-import faviconImage from '../image/favicon.jpg'; 
-import backgroundImage from '../image/background.jpg'; // Optional, if you want to use a local image
-import { Card } from 'react-bootstrap';
+import faviconImage from '../image/favicon.jpg'; // Ensure you have the favicon image in the correct path
 
 
 const syncPointer = ({ x: pointerX, y: pointerY }) => {
@@ -26,17 +24,14 @@ function WelcomePage() {
   const handleShow = () => setShowSidebar(true);
 
   return (
-    
     <div
       className="d-flex flex-column min-vh-100"
       style={{
-        fontFamily: "'Kanit', sans-serif",
-        background: 'linear-gradient(135deg, #dff2fd, #ffffff)',
+        backgroundImage: 'url(https://img.freepik.com/free-photo/abstract-luxury-gradient-blue-background-smooth-dark-blue-with-black-vignette-studio-banner_1258-70823.jpg)',
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',
         position: 'relative',
-
       }}
     >
       {/* ปุ่มเมนู */}
@@ -56,7 +51,7 @@ function WelcomePage() {
         <Offcanvas.Header closeButton>
           <Offcanvas.Title style={{ color: '#000000' }}>เมนู</Offcanvas.Title>
         </Offcanvas.Header>
-        <Offcanvas.Body >
+        <Offcanvas.Body>
           <ul className="list-unstyled">
             <li><a href="#home" onClick={handleClose}>หน้าแรก</a></li>
             <li><a href="#about" onClick={handleClose}>เกี่ยวกับเรา</a></li>
@@ -67,46 +62,40 @@ function WelcomePage() {
 
       {/* Welcome section */}
       <div className="d-flex flex-grow-1 justify-content-center align-items-center text-center" style={{ zIndex: 1 }}>
-        <Card
-          bg="light"            // สีพื้นหลังของ Card
-          text="dark"           // สีตัวอักษรใน Card
-          style={{ width: '70%', padding: '8%', borderRadius: '1rem', boxShadow: '0 4px 15px rgba(0,0,0,0.3)'}}
-        >
-          <Card.Body>
-            <motion.h1
-              initial={{ opacity: 0, y: 50 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1 }}
-              style={{ fontSize: '5rem' }}
-            >
-              Welcome to Website
-            </motion.h1>
+        <div>
+          <motion.h1
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1 }}
+            style={{ color: '#000000', fontSize: '5rem' }}
+          >
+            Welcome to Website
+          </motion.h1>
 
-            <motion.h2
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.2, duration: 0.8 }}
-              style={{ fontSize: '2rem' }}
-            >
-              This is a simple website
-            </motion.h2>
+          <motion.h2
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.2, duration: 0.8 }}
+            style={{ color: '#000000', fontSize: '2rem' }}
+          >
+            This is a simple website
+          </motion.h2>
 
-            <motion.div
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ delay: 0.5, duration: 0.7 }}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ delay: 0.5, duration: 0.7 }}
+          >
+            <Button
+              variant="dark"
+              type="button"
+              className="btn btn-primary mt-4"
+              style={{ fontSize: '1.2rem', padding: '10px 20px' }}
             >
-              <Button
-                variant="dark"
-                type="button"
-                className="btn btn-primary mt-4"
-                style={{ fontSize: '1.2rem', padding: '10px 20px' }}
-              >
-                เข้าสู่หน้าหลัก
-              </Button>
-            </motion.div>
-          </Card.Body>
-        </Card>
+              เข้าสู่หน้าหลัก
+            </Button>
+          </motion.div>
+        </div>
       </div>
 
       {/* Footer */}
