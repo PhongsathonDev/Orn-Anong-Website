@@ -1,38 +1,78 @@
-.App {
-  text-align: center;
+*,
+*:after,
+*:before {
+	box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+
+:root {
+	--x: 0;
+	--y: 0;
+	--xp: 0;
+	--yp: 0;
+	--hue: calc(0 + (var(--xp) * 100));
+
+	--size: 50px;
+	--glow: radial-gradient(50% 50% at center,
+			hsl(var(--hue) 100% 100%),
+			hsl(var(--hue) 100% 100%),
+			transparent) calc((var(--x) * 1px) - (var(--size) * 0.5)) calc((var(--y) * 1px) - (var(--size) * 0.5)) / var(--size) var(--size) no-repeat fixed;
+}
+.controls {
+	position: fixed;
+	top: 2rem;
+	right: 2rem;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+button {
+	border-radius: 1rem;
+	text-transform: uppercase;
+	font-weight: bold;
+	letter-spacing: 0.1ch;
+	background: var(--bg);
+	border: 4px solid transparent;
+	box-shadow: 0 1px hsl(0 0% 100% / 0.15) inset;
+	cursor: pointer;
+	background:
+		linear-gradient(var(--bg), var(--bg)) padding-box,
+		var(--glow),
+		linear-gradient(black, black) border-box;
+	transition: background-size 0.24s;
+	touch-action: none;
+	position: relative;
+	padding: 1rem 2rem;
+}
+button::before {
+	content: "";
+	position: absolute;
+	inset: 0;
+	box-shadow: 0 1px hsl(0 0% 100% / 0.15) inset;
+	background: var(--bg);
+	z-index: 2;
+	border-radius: 1rem;
+}
+button span {
+	background: var(--glow), black;
+	background-clip: text;
+	color: transparent;
+	height: 100%;
+	width: 100%;
+	z-index: 2;
+	position: relative;
+	inset: 0;
+}
+:root:has(button:active) {
+	--size: 300px;
+}
+button::after {
+	content: "";
+	position: absolute;
+	inset: -4px;
+	filter: blur(20px);
+	border: 4px solid transparent;
+	background: var(--glow);
+	border-radius: 1rem;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
 
-.App-link {
-  color: #61dafb;
-}
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
