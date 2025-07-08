@@ -75,4 +75,11 @@ button::after {
 }
 
 
+.animated-button-1 {
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
 
+.animated-button-1:hover {
+  transform: scale(1.1); /* Slightly enlarge the button */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* More prominent shadow */
+}
