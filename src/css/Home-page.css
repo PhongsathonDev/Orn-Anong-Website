@@ -1,0 +1,243 @@
+/* เคลื่อนไหวแบบ gradient พื้นหลัง */
+.bg-animated {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100vh;
+  background: url(https://plus.unsplash.com/premium_photo-1661761077411-d50cba031848?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D) no-repeat center center;
+  background-size: 150% 150%;
+  animation: gradientAnimation 100s ease infinite;
+  opacity: 0.7;
+  filter: blur(10px);
+  transform: scale(1.05); /* prevents blur cutoff at edges */
+  
+}
+body {
+  overflow-x: hidden;
+}
+
+
+.hero-wrapper {
+  position: relative;
+  height: 100vh; /* ให้พอดีกับ bg-animated */
+  overflow: hidden;
+}
+
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+
+.custom-navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  
+  font-family: "Prompt", sans-serif;
+}
+
+.custom-navbar .nav-left {
+  font-size: 0.85rem;
+  line-height: 1rem;
+}
+
+.custom-navbar .nav-left b {
+  font-weight: 600;
+}
+
+.custom-navbar .nav-right {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+}
+
+.custom-navbar .nav-item {
+  text-transform: uppercase;
+  font-size: 1.3rem;
+  letter-spacing: 0.5px;
+  color: #000;
+  cursor: pointer;
+  position: relative;
+}
+
+.custom-navbar .divider {
+  height: 16px;
+  width: 1px;
+  background-color: #000;
+}
+
+
+
+.shadow__btn {
+  padding: 10px 20px;
+  border: none;
+  font-size: 17px;
+  color: #fff;
+  border-radius: 7px;
+  letter-spacing: 4px;
+  font-weight: 700;
+  text-transform: uppercase;
+  transition: 0.5s;
+  transition-property: box-shadow;
+}
+
+.shadow__btn {
+  background: rgb(0,140,255);
+  box-shadow: 0 0 25px rgb(0,140,255);
+}
+
+.shadow__btn:hover {
+  box-shadow: 0 0 5px rgb(0,140,255),
+              0 0 25px rgb(0,140,255),
+              0 0 50px rgb(0,140,255),
+              0 0 100px rgb(0,140,255);
+}
+
+
+/* ลูกเล่นเมื่อ hover nav item */
+.custom-navbar .nav-item {
+  position: relative;
+  font-size: 1.25rem;
+  font-family: "Prompt", sans-serif;
+  transition: color 0.3s ease;
+}
+
+.custom-navbar .nav-item:hover {
+  color: #007bff;
+}
+
+/* ขีดใต้เมนูแบบ animation */
+.custom-navbar .nav-item::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 100%;
+  height: 2px;
+  background-color: #007bff;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+
+.custom-navbar .nav-item:hover::after {
+  transform: scaleX(1);
+}
+
+/* background blur effect */
+.custom-navbar {
+  
+  border-radius: 15px;
+  margin: 0px 0px;
+  padding: 10px 30px;
+  
+  position: relative;
+  z-index: 10;
+  transition: all 0.3s ease;
+}
+
+/* Optional: sticky nav on scroll */
+.hero-wrapper .custom-navbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+
+.about-section {
+  position: relative;
+  z-index: 1;
+  padding: 80px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: "Prompt", sans-serif;
+  color: #fff;
+  text-align: center;
+}
+
+.about-card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(12px);
+  border-radius: 20px;
+  padding: 40px 30px;
+  max-width: 800px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  animation: fadeInUp 1s ease forwards;
+  opacity: 0;
+  transform: translateY(30px);
+  margin-top: 20px;
+  transition: all 0.3s ease;
+}
+
+.about-card:hover {
+  transform: translateY(10px) scale(1.02);
+  box-shadow: 0 15px 40px rgba(0, 140, 255, 0.4);
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+
+.shadow {
+  transition: transform 0.3s ease;
+}
+
+.shadow:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+img.rounded-4 {
+  border-radius: 20px;
+}
+
+
+.service-card {
+  background-color: white;
+  border-radius: 30px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: 100%;
+  max-width: 320px;
+  min-height: 320px;
+}
+
+.service-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 35px rgba(0, 0, 0, 0.2);
+}
+
+.service-card .icon {
+  font-size: 3.5rem;
+}
+
+.location-section iframe {
+  transition: all 0.3s ease;
+}
+
+.location-section iframe:hover {
+  filter: brightness(0.95);
+}
+
+.contact-info p {
+  margin-bottom: 10px;
+}
+
+

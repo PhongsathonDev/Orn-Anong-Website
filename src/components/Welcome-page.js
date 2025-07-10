@@ -1,10 +1,11 @@
-import React, { useState, useEffect } from 'react';
-import { Offcanvas, Button, Modal, Card } from 'react-bootstrap';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import { motion } from 'framer-motion';
-import faviconImage from '../image/favicon.jpg';
+import React, { useState, useEffect } from "react";
+import { Offcanvas, Button, Modal, Card } from "react-bootstrap";
+import "bootstrap/dist/css/bootstrap.min.css";
+import { motion } from "framer-motion";
+import faviconImage from "../image/favicon.jpg";
 import { MdContactSupport } from "react-icons/md";
-import backgroundImage from '../image/welcome-bg.png'; 
+import backgroundImage from "../image/welcome-bg.png";
+import { Link } from "react-router-dom";
 
 // Pointer sync function - no changes needed here, but ensure it doesn't negatively impact performance on mobile.
 const syncPointer = ({ x: pointerX, y: pointerY }) => {
@@ -13,10 +14,10 @@ const syncPointer = ({ x: pointerX, y: pointerY }) => {
   const y = pointerY.toFixed(2);
   const xp = (pointerX / window.innerWidth).toFixed(2);
   const yp = (pointerY / window.innerHeight).toFixed(2);
-  document.documentElement.style.setProperty('--x', x);
-  document.documentElement.style.setProperty('--xp', xp);
-  document.documentElement.style.setProperty('--y', y);
-  document.documentElement.style.setProperty('--yp', yp);
+  document.documentElement.style.setProperty("--x", x);
+  document.documentElement.style.setProperty("--xp", xp);
+  document.documentElement.style.setProperty("--y", y);
+  document.documentElement.style.setProperty("--yp", yp);
 };
 
 function WelcomePage() {
@@ -25,12 +26,11 @@ function WelcomePage() {
 
   // Attach and clean up the pointer move event listener
   useEffect(() => {
-    document.body.addEventListener('pointermove', syncPointer);
+    document.body.addEventListener("pointermove", syncPointer);
     return () => {
-      document.body.removeEventListener('pointermove', syncPointer);
+      document.body.removeEventListener("pointermove", syncPointer);
     };
   }, []);
-
 
   const handleClose = () => setShowSidebar(false);
   const handleShow = () => setShowSidebar(true);
@@ -44,7 +44,7 @@ function WelcomePage() {
       style={{
         fontFamily: "'Kanit', sans-serif",
         background: `url(${backgroundImage}) center/cover no-repeat`,
-        position: 'relative',
+        position: "relative",
       }}
     >
       {/* Logo */}
@@ -82,19 +82,22 @@ function WelcomePage() {
       </Offcanvas> */}
 
       {/* Welcome Card*/}
-      <div className="d-flex flex-grow-1 justify-content-center align-items-center text-center px-3" style={{ zIndex: 1 }}>
+      <div
+        className="d-flex flex-grow-1 justify-content-center align-items-center text-center px-3"
+        style={{ zIndex: 1 }}
+      >
         <Card
           bg="light"
           text="dark"
           className="w-100 mx-md-5" // Full width on small screens, margin on medium+
           style={{
-            maxWidth: '930px', // Max width to prevent it from becoming too large on desktops
-            padding: '3vw', // Use viewport width for padding
-            borderRadius: '1rem',
-            background: 'rgba(255, 255, 255, 0.8)', // Simplified background
-            border: '3px solid rgba(153, 153, 153, 0.3)',
-            boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
-            color: '#000000',
+            maxWidth: "930px", // Max width to prevent it from becoming too large on desktops
+            padding: "3vw", // Use viewport width for padding
+            borderRadius: "1rem",
+            background: "rgba(255, 255, 255, 0.8)", // Simplified background
+            border: "3px solid rgba(153, 153, 153, 0.3)",
+            boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)",
+            color: "#000000",
           }}
         >
           <Card.Body>
@@ -102,16 +105,27 @@ function WelcomePage() {
               initial={{ opacity: 0, y: 50 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1 }}
-              style={{ fontSize: 'clamp(2.5rem, 10vw, 5rem)', color: 'rgb(231, 66, 48)' }} // Responsive font size
+              style={{
+                fontSize: "clamp(2.5rem, 10vw, 5rem)",
+                color: "rgb(231, 66, 48)",
+              }} // Responsive font size
             >
-              <img src={faviconImage} alt="logo" className="mb-3" style={{ width: '120px', height: '120px' }} />
+              <img
+                src={faviconImage}
+                alt="logo"
+                className="mb-3"
+                style={{ width: "120px", height: "120px" }}
+              />
             </motion.h1>
-            
+
             <motion.h1
               initial={{ opacity: 0, y: 50 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1 }}
-              style={{ fontSize: 'clamp(2.5rem, 10vw, 5rem)', color: 'rgb(231, 66, 48)' }} // Responsive font size
+              style={{
+                fontSize: "clamp(2.5rem, 10vw, 5rem)",
+                color: "rgb(231, 66, 48)",
+              }} // Responsive font size
             >
               Welcome to Website
             </motion.h1>
@@ -120,7 +134,10 @@ function WelcomePage() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2, duration: 0.8 }}
-              style={{ fontSize: 'clamp(1.2rem, 5vw, 2rem)', color: 'rgb(20, 25, 118)' }} // Responsive font size
+              style={{
+                fontSize: "clamp(1.2rem, 5vw, 2rem)",
+                color: "rgb(20, 25, 118)",
+              }} // Responsive font size
             >
               This is a simple website
             </motion.h2>
@@ -132,13 +149,18 @@ function WelcomePage() {
               className="mt-4"
             >
               <div> &nbsp; &nbsp;</div>
-              <Button
-                variant="dark"
-                type="button"
-                style={{ fontSize: 'clamp(1rem, 4vw, 1.2rem)', padding: '10px 20px' }} // Responsive font size
-              >
-                เข้าสู่หน้าหลัก
-              </Button>
+              <Link to={"/home"}>
+                <Button
+                  variant="dark"
+                  type="button"
+                  style={{
+                    fontSize: "clamp(1rem, 4vw, 1.2rem)",
+                    padding: "10px 20px",
+                  }} // Responsive font size
+                >
+                  เข้าสู่หน้าหลัก
+                </Button>
+              </Link>
             </motion.div>
           </Card.Body>
         </Card>
@@ -185,7 +207,10 @@ function WelcomePage() {
 
       {/* Footer */}
       <footer className="text-center py-2" style={{ zIndex: 1 }}>
-        <p className="m-0" style={{ color: 'rgba(255, 255, 255, 0.8)', fontSize: '0.9rem' }}>
+        <p
+          className="m-0"
+          style={{ color: "rgba(255, 255, 255, 0.8)", fontSize: "0.9rem" }}
+        >
           © 2025 Your Company Name. All rights reserved.
         </p>
       </footer>
