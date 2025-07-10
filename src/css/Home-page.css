@@ -1,3 +1,4 @@
+
 /* เคลื่อนไหวแบบ gradient พื้นหลัง */
 .bg-animated {
   position: absolute;
@@ -6,7 +7,7 @@
   z-index: -1;
   width: 100%;
   height: 100vh;
-  background: url(https://plus.unsplash.com/premium_photo-1661761077411-d50cba031848?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D) no-repeat center center;
+  background: url(../image/home-bg.jpg) no-repeat center center;
   background-size: 150% 150%;
   animation: gradientAnimation 100s ease infinite;
   opacity: 0.7;
@@ -17,6 +18,9 @@
 body {
   overflow-x: hidden;
 }
+
+
+
 
 
 .hero-wrapper {
@@ -110,11 +114,12 @@ body {
   position: relative;
   font-size: 1.25rem;
   font-family: "Prompt", sans-serif;
-  transition: color 0.3s ease;
+  transition: color 0.1s ease;
 }
 
 .custom-navbar .nav-item:hover {
   color: #007bff;
+  
 }
 
 /* ขีดใต้เมนูแบบ animation */
@@ -127,12 +132,13 @@ body {
   height: 2px;
   background-color: #007bff;
   transform: scaleX(0);
-  transform-origin: left;
-  transition: transform 0.3s ease;
+  transform-origin: center;
+  transition: transform 0.9s ease;
 }
 
 .custom-navbar .nav-item:hover::after {
   transform: scaleX(1);
+  
 }
 
 /* background blur effect */
@@ -240,4 +246,8 @@ img.rounded-4 {
   margin-bottom: 10px;
 }
 
-
+/* หัวข้อ h2 สีแดง */
+ h3, h4, h5 {
+  color: #D32F2F;
+  font-family: "Prompt", sans-serif;
+}

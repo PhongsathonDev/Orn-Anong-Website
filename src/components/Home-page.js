@@ -1,17 +1,82 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Navbar, Offcanvas } from "react-bootstrap";
 import { FaFacebookSquare, FaLine, FaEnvelope } from "react-icons/fa";
 import { motion } from "framer-motion";
 import logoImage from "../image/favicon.jpg";
 import "../css/Home-page.css";
+import about from "../image/about.webp"
+
 
 function HomePage() {
   const [showOffcanvas, setShowOffcanvas] = useState(false);
-  const handleClose = () => setShowOffcanvas(false);
-  const handleShow = () => setShowOffcanvas(true);
+const [isLoading, setIsLoading] = useState(true); // เพิ่ม state สำหรับ Splash screen
+
+useEffect(() => {
+  const timer = setTimeout(() => {
+    setIsLoading(false);
+    document.body.classList.add("loaded"); // ให้ scroll ได้เมื่อโหลดเสร็จ
+  }, 3500);
+  return () => clearTimeout(timer);
+}, []);
+
 
   return (
     <>
+    {isLoading && (
+  <motion.div
+    className="splash-screen"
+    initial={{ opacity: 1 }}
+    animate={{ opacity: 0 }}
+    transition={{ duration: 1.5, delay: 2 }}
+    style={{
+      position: "fixed",
+      top: 0,
+      left: 0,
+      width: "100vw",
+      height: "100vh",
+      background: "linear-gradient(135deg,rgb(255, 255, 255),rgb(255, 255, 255))", // โทนน้ำเงิน
+      opacity: 0.7,
+      
+      zIndex: 9999,
+      display: "flex",
+      flexDirection: "column",
+      justifyContent: "center",
+      alignItems: "center",
+      color: "white",
+      fontFamily: "Prompt, sans-serif",
+    }}
+  >
+    <motion.img
+      src={logoImage}
+      alt="Logo"
+      initial={{ scale: 0.7, opacity: 0 }}
+      animate={{ scale: 1.1, opacity: 1 }}
+      transition={{ duration: 1 }}
+      style={{
+        width: "130px",
+        height: "130px",
+        borderRadius: "50%",
+        marginBottom: "20px",
+        boxShadow: "0 0 30px rgba(255,255,255,0.3)",
+      }}
+    />
+    <motion.h1
+      initial={{ opacity: 0, y: 30 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 1.2, delay: 0.5 }}
+      style={{
+        fontSize: "2.5rem",
+        fontWeight: "bold",
+        color: "black",
+        letterSpacing: "2px",
+      }}
+    >
+      ORNANONG ACCOUNTING
+    </motion.h1>
+  </motion.div>
+)}
+
+
       {/* bg-animated อยู่ด้านบนสุด */}
       <div className="bg-animated"></div>
       {/* ส่วน hero พร้อมพื้นหลัง */}
@@ -41,12 +106,12 @@ function HomePage() {
             </Navbar.Brand>
           </div>
 
-          <div className="nav-right">
-            <span className="nav-item">เกี่ยวกับเรา</span>
+          <div className="nav-right" >
+            <a href="#getstart" style={{ textDecoration: "none" }} ><span className="nav-item">เกี่ยวกับเรา</span></a>
             <div className="divider" />
-            <span className="nav-item">บริการของเรา</span>
+            <a href="#our-services" style={{ textDecoration: "none" }}><span className="nav-item">บริการของเรา</span></a>
             <div className="divider" />
-            <span className="nav-item">ติดต่อเรา</span>
+            <a href="#contract" style={{ textDecoration: "none" }}><span className="nav-item">ติดต่อเรา</span></a>
             <div />
           </div>
         </motion.div>
@@ -102,7 +167,7 @@ function HomePage() {
       <div
         className="container mt-5"
         id="getstart"
-        style={{ paddingTop: "200px", paddingBottom: "180px" }}
+        style={{ paddingTop: "50px", paddingBottom: "50px" }}
       >
         <motion.h2
           className="text-center mb-5"
@@ -129,7 +194,7 @@ function HomePage() {
         >
           <div className="col-md-6 mb-4">
             <img
-              src="https://www.freshbooks.com/wp-content/uploads/2022/02/financial-accounting-1.jpg"
+              src={about}
               alt="เกี่ยวกับเรา"
               height={200}
               className="img-fluid rounded-4 shadow"
@@ -222,9 +287,9 @@ function HomePage() {
       </div>
 
       {/* บริการของเรา */}
-      <div
+      <div id="our-services"
         className="container"
-        style={{ paddingTop: "220px", paddingBottom: "220px" }}
+        style={{ paddingTop: "200px", paddingBottom: "300px" }}
       >
         <motion.h2
           className="text-center mb-5"
@@ -299,9 +364,10 @@ function HomePage() {
 
       {/* แผนที่ */}
       <div
+      id="contract"
         className="location-section"
         style={{
-          paddingTop: "150px",
+          paddingTop: "120px",
           paddingBottom: "150px",
           backgroundColor: "#f9fafb",
           textAlign: "center",
