@@ -668,7 +668,7 @@ function HomePage() {
       <div
         id="our-services"
         style={{ 
-          paddingTop: "120px", 
+          paddingTop: "140px", 
           paddingBottom: "120px",
           background: "linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%)",
           position: "relative",
@@ -752,95 +752,124 @@ function HomePage() {
           </motion.div>
 
           {/* Services Grid */}
-          <div className="row g-3 justify-content-center">
+          <div className="row g-4 justify-content-center">
             {[
               {
-                icon: "📊",
-                title: "การทำบัญชี",
-                desc: "จัดทำบัญชีครบถ้วนตามมาตรฐาน",
-                details: ["จัดทำบัญชีรายวัน", "จัดทำงบการเงิน", "ปิดบัญชีประจำเดือน", "รายงานภาษีมูลค่าเพิ่ม"],
+                icon: "⚖️",
+                title: "บริการด้านกฎหมาย",
+                desc: "คำปรึกษาทางกฎหมายและดำเนินคดี",
+                details: ["งานกฎหมายธุรกิจ", "งานกฎหมายภาษีอากร", "งานอรรถคดีและบังคับคดี", "งาน Transfer Pricing"],
                 color: "#3b82f6",
                 bgGradient: "linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%)",
-                shadowColor: "rgba(59, 130, 246, 0.25)"
+                shadowColor: "rgba(59, 130, 246, 0.25)",
+                url: "/services/legal"
+              },
+              {
+                icon: "📊",
+                title: "บริการจัดทำบัญชีและเงินเดือน",
+                desc: "บริการจัดทำบัญชีครบวงจร",
+                details: ["บริการจัดทำบัญชี", "บริการจัดทำเงินเดือน", "จัดทำงบการเงิน", "ให้คำปรึกษาทางบัญชี"],
+                color: "#10b981",
+                bgGradient: "linear-gradient(135deg, #d1fae5 0%, #a7f3d0 100%)",
+                shadowColor: "rgba(16, 185, 129, 0.25)",
+                url: "/services/accounting-payroll"
+              },
+              {
+                icon: "📑",
+                title: "บริการตรวจสอบบัญชี",
+                desc: "ตรวจสอบโดยผู้สอบบัญชีรับอนุญาต",
+                details: ["ตรวจสอบงบการเงิน", "สอบทานงบการเงิน", "ตรวจสอบการซื้อกิจการ", "ตรวจสอบพิเศษ"],
+                color: "#8b5cf6",
+                bgGradient: "linear-gradient(135deg, #ede9fe 0%, #ddd6fe 100%)",
+                shadowColor: "rgba(139, 92, 246, 0.25)",
+                url: "/services/audit"
               },
               {
                 icon: "🔍",
-                title: "การตรวจสอบบัญชี",
-                desc: "ตรวจสอบโดยผู้สอบบัญชีรับอนุญาต",
-                details: ["ตรวจสอบงบการเงิน", "รายงานผู้สอบบัญชี", "ตรวจสอบระบบควบคุมภายใน", "ให้คำแนะนำปรับปรุง"],
-                color: "#10b981",
-                bgGradient: "linear-gradient(135deg, #d1fae5 0%, #a7f3d0 100%)",
-                shadowColor: "rgba(16, 185, 129, 0.25)"
-              },
-              {
-                icon: "💼",
-                title: "คำปรึกษาทางธุรกิจ",
-                desc: "ให้คำแนะนำเชิงกลยุทธ์",
-                details: ["วางแผนทางการเงิน", "วิเคราะห์ต้นทุน", "ประเมินความเสี่ยง", "แนะนำการปรับปรุงธุรกิจ"],
-                color: "#8b5cf6",
-                bgGradient: "linear-gradient(135deg, #ede9fe 0%, #ddd6fe 100%)",
-                shadowColor: "rgba(139, 92, 246, 0.25)"
-              },
-              {
-                icon: "💰",
-                title: "วางแผนภาษี",
-                desc: "วางแผนภาษีอย่างถูกต้องและคุ้มค่า",
-                details: ["วางแผนภาษีเงินได้", "วางแผนภาษีมูลค่าเพิ่ม", "ให้คำปรึกษาข้อกฎหมายภาษี", "ช่วยลดภาระภาษี"],
+                title: "บริการตรวจสอบภายใน",
+                desc: "ประเมินระบบควบคุมและความเสี่ยง",
+                details: ["งานตรวจสอบภายใน (IA)", "ประเมินระบบควบคุมภายใน", "รายงาน ESG", "ตรวจสอบระบบ IT"],
                 color: "#f59e0b",
                 bgGradient: "linear-gradient(135deg, #fef3c7 0%, #fde68a 100%)",
-                shadowColor: "rgba(245, 158, 11, 0.25)"
+                shadowColor: "rgba(245, 158, 11, 0.25)",
+                url: "/services/internal-audit"
               },
+              {
+                icon: "💻",
+                title: "บริการออกแบบ พัฒนาเว็บไซต์และไอที",
+                desc: "พัฒนาและดูแลระบบ IT ครบวงจร",
+                details: ["ดูแลระบบคอมพิวเตอร์", "จำหน่ายซอฟต์แวร์", "บริการด้านเว็บไซต์", "วางระบบ Work From Home"],
+                color: "#ef4444",
+                bgGradient: "linear-gradient(135deg, #fee2e2 0%, #fecaca 100%)",
+                shadowColor: "rgba(239, 68, 68, 0.25)",
+                url: "/services/web-it"
+              },
+              
             ].map((item, i) => (
               <motion.div
-                className="col-lg-6 col-xl-3 col-md-6 mb-3"
+                className="col-lg-4 col-md-6 mb-4"
                 key={i}
                 initial={{ opacity: 0, y: 60 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.7, delay: i * 0.2 }}
+                transition={{ duration: 0.7, delay: i * 0.15 }}
                 viewport={{ once: true }}
               >
                 <motion.div 
                   className="h-100 position-relative"
-                  whileHover={{ y: -6, scale: 1.02 }}
+                  whileHover={{ y: -8, scale: 1.03 }}
                   transition={{ duration: 0.3 }}
                   style={{
-                    background: "rgba(255, 255, 255, 0.9)",
-                    padding: "1.8rem 1.5rem",
+                    background: "rgba(255, 255, 255, 0.95)",
+                    padding: "1.5rem 1.4rem",
                     borderRadius: "18px",
                     boxShadow: `0 8px 25px ${item.shadowColor}`,
-                    border: `2px solid ${item.color}15`,
-                    backdropFilter: "blur(10px)",
+                    border: `2px solid ${item.color}20`,
+                    backdropFilter: "blur(15px)",
                     overflow: "hidden",
                     cursor: "pointer",
                     minHeight: "280px",
-                    maxHeight: "300px"
+                    display: "flex",
+                    flexDirection: "column",
                   }}
                   onMouseEnter={(e) => {
                     e.currentTarget.style.boxShadow = `0 15px 40px ${item.shadowColor}`;
-                    e.currentTarget.style.borderColor = `${item.color}30`;
+                    e.currentTarget.style.borderColor = `${item.color}40`;
+                    e.currentTarget.style.background = "rgba(255, 255, 255, 1)";
                   }}
                   onMouseLeave={(e) => {
                     e.currentTarget.style.boxShadow = `0 8px 25px ${item.shadowColor}`;
-                    e.currentTarget.style.borderColor = `${item.color}15`;
+                    e.currentTarget.style.borderColor = `${item.color}20`;
+                    e.currentTarget.style.background = "rgba(255, 255, 255, 0.95)";
                   }}
                 >
                   {/* Background Pattern */}
                   <div style={{
                     position: "absolute",
-                    top: "-40px",
-                    right: "-40px",
-                    width: "100px",
-                    height: "100px",
-                    background: `${item.color}08`,
+                    top: "-50px",
+                    right: "-50px",
+                    width: "120px",
+                    height: "120px",
+                    background: `linear-gradient(135deg, ${item.color}10, ${item.color}05)`,
+                    borderRadius: "50%",
+                    zIndex: 0
+                  }}></div>
+                  
+                  <div style={{
+                    position: "absolute",
+                    bottom: "-30px",
+                    left: "-30px",
+                    width: "80px",
+                    height: "80px",
+                    background: `linear-gradient(45deg, ${item.color}08, transparent)`,
                     borderRadius: "50%",
                     zIndex: 0
                   }}></div>
                   
                   {/* Content */}
-                  <div style={{ position: "relative", zIndex: 1 }}>
+                  <div style={{ position: "relative", zIndex: 1, flex: 1, display: "flex", flexDirection: "column" }}>
                     {/* Icon */}
                     <motion.div 
-                      whileHover={{ scale: 1.1, rotate: 5 }}
+                      whileHover={{ scale: 1.15, rotate: 10 }}
                       transition={{ duration: 0.3 }}
                       style={{ 
                         width: "60px",
@@ -850,9 +879,9 @@ function HomePage() {
                         display: "flex",
                         alignItems: "center",
                         justifyContent: "center",
-                        marginBottom: "1.2rem",
+                        marginBottom: "1rem",
                         boxShadow: `0 6px 16px ${item.color}40`,
-                        fontSize: "1.5rem"
+                        fontSize: "1.6rem"
                       }}
                     >
                       <span style={{ color: "white" }}>{item.icon}</span>
@@ -861,12 +890,14 @@ function HomePage() {
                     {/* Title */}
                     <h3
                       style={{
-                        fontSize: "1.3rem",
+                        fontSize: "1.1rem",
                         fontWeight: "700",
                         fontFamily: "Prompt, sans-serif",
                         color: item.color,
-                        marginBottom: "0.8rem",
-                        lineHeight: "1.3"
+                        marginBottom: "0.6rem",
+                        lineHeight: "1.2",
+                        height: "auto",
+                        overflow: "hidden"
                       }}
                     >
                       {item.title}
@@ -875,30 +906,32 @@ function HomePage() {
                     {/* Description */}
                     <p
                       style={{
-                        fontSize: "0.95rem",
+                        fontSize: "0.9rem",
                         fontFamily: "Prompt, sans-serif",
                         color: "#475569",
                         marginBottom: "1rem",
                         fontWeight: "500",
-                        lineHeight: "1.5"
+                        lineHeight: "1.4"
                       }}
                     >
                       {item.desc}
                     </p>
                     
-                    {/* Details List - Compact */}
-                    <div style={{ marginTop: "0.8rem" }}>
-                      {item.details.slice(0, 3).map((detail, idx) => (
+                    {/* Details */}
+                    <div style={{ marginTop: "auto" }}>
+                      {item.details.slice(0, 2).map((detail, idx) => (
                         <motion.div
                           key={idx}
                           initial={{ opacity: 0, x: -20 }}
                           whileInView={{ opacity: 1, x: 0 }}
-                          transition={{ duration: 0.5, delay: i * 0.2 + idx * 0.1 }}
+                          transition={{ duration: 0.5, delay: i * 0.15 + idx * 0.1 }}
                           viewport={{ once: true }}
                           style={{
                             display: "flex",
                             alignItems: "center",
-                            marginBottom: "0.5rem"
+                            marginBottom: "0.4rem",
+                            minHeight: "18px",
+                            paddingBottom: "1px"
                           }}
                         >
                           <div style={{
@@ -913,13 +946,106 @@ function HomePage() {
                             fontSize: "0.85rem",
                             fontFamily: "Prompt, sans-serif",
                             color: "#64748b",
-                            lineHeight: "1.4"
+                            lineHeight: "1.3"
                           }}>
                             {detail}
                           </span>
                         </motion.div>
                       ))}
                       
+                      {/* Last Detail with Button */}
+                      <motion.div
+                        initial={{ opacity: 0, x: -20 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        transition={{ duration: 0.5, delay: i * 0.15 + 0.2 }}
+                        viewport={{ once: true }}
+                        style={{
+                          display: "flex",
+                          alignItems: "center",
+                          justifyContent: "space-between",
+                          marginBottom: "0.4rem",
+                          minHeight: "18px",
+                          paddingBottom: "1px"
+                        }}
+                      >
+                        <div style={{
+                          display: "flex",
+                          alignItems: "center",
+                          flex: 1
+                        }}>
+                          <div style={{
+                            width: "6px",
+                            height: "6px",
+                            background: `linear-gradient(45deg, ${item.color}, ${item.color}aa)`,
+                            borderRadius: "50%",
+                            marginRight: "0.8rem",
+                            flexShrink: 0
+                          }}></div>
+                          <span style={{
+                            fontSize: "0.85rem",
+                            fontFamily: "Prompt, sans-serif",
+                            color: "#64748b",
+                            lineHeight: "1.3"
+                          }}>
+                            {item.details[2]}
+                          </span>
+                        </div>
+                        
+                        {/* More Info Button */}
+                        <motion.div 
+                          initial={{ opacity: 0, y: 10 }}
+                          whileInView={{ opacity: 1, y: 0 }}
+                          transition={{ duration: 0.4, delay: i * 0.15 + 0.3 }}
+                          viewport={{ once: true }}
+                          style={{ marginLeft: "0.8rem" }}
+                        >
+                          <a 
+                            href={item.url || `/services/${item.title.toLowerCase().replace(/\s+/g, '-')}`}
+                            style={{ textDecoration: "none" }}
+                          >
+                            <motion.button
+                              whileHover={{ scale: 1.03, y: -1 }}
+                              whileTap={{ scale: 0.98 }}
+                              style={{
+                                background: `linear-gradient(135deg, ${item.color}, ${item.color}dd)`,
+                                border: "none",
+                                color: "white",
+                                padding: "6px 12px",
+                                borderRadius: "16px",
+                                fontSize: "0.8rem",
+                                fontFamily: "Prompt, sans-serif",
+                                fontWeight: "600",
+                                boxShadow: `0 3px 8px ${item.color}25`,
+                                cursor: "pointer",
+                                display: "flex",
+                                alignItems: "center",
+                                gap: "4px",
+                                transition: "all 0.3s ease",
+                                width: "fit-content"
+                              }}
+                              onMouseEnter={(e) => {
+                                e.currentTarget.style.boxShadow = `0 4px 12px ${item.color}35`;
+                              }}
+                              onMouseLeave={(e) => {
+                                e.currentTarget.style.boxShadow = `0 3px 8px ${item.color}25`;
+                              }}
+                            >
+                              <span>ดูเพิ่มเติม</span>
+                              <motion.span
+                                style={{ fontSize: "0.8rem" }}
+                                animate={{ x: [0, 3, 0] }}
+                                transition={{ 
+                                  duration: 1.5, 
+                                  repeat: Infinity, 
+                                  ease: "easeInOut" 
+                                }}
+                              >
+                                →
+                              </motion.span>
+                            </motion.button>
+                          </a>
+                        </motion.div>
+                      </motion.div>
                     </div>
                   </div>
                 </motion.div>
@@ -1524,7 +1650,7 @@ function HomePage() {
             e.target.style.boxShadow = '0 6px 20px rgba(102, 126, 234, 0.4)';
           }}
         >
-          {showContactWidget ? '✕' : '💬'}
+          {showContactWidget ? '✕' : '💭'}
         </motion.button>
       </div>
     </>
