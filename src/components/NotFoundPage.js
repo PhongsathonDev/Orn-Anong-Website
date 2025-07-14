@@ -23,17 +23,17 @@ function NotFoundPage() {
           style={{
             backgroundColor: "rgba(255, 255, 255, 0.95)",
             fontFamily: "Prompt, sans-serif",
-            maxWidth: "600px",
+            maxWidth: "650px",
           }}
         >
           <motion.h1
             className="mb-4"
-            style={{ fontSize: "6rem", fontWeight: "bold", color: "#dc3545" }}
+            style={{ fontSize: "6rem", fontWeight: "bold", color: "#ffc107" }}
             initial={{ y: -30, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ delay: 0.2 }}
           >
-            404
+            🚧
           </motion.h1>
           <motion.h2
             className="mb-3"
@@ -42,10 +42,10 @@ function NotFoundPage() {
             animate={{ y: 0, opacity: 1 }}
             transition={{ delay: 0.4 }}
           >
-            ไม่พบหน้าที่คุณค้นหา
+            หน้านี้ปิดปรับปรุงอยู่
           </motion.h2>
           <p style={{ fontSize: "1.2rem", color: "#555" }}>
-            ลิงก์ที่คุณพยายามเข้าถึงอาจไม่ถูกต้องหรือถูกลบไปแล้ว
+            เรากำลังปรับปรุงหน้านี้เพื่อให้บริการที่ดีขึ้น กรุณากลับมาใหม่อีกครั้ง
           </p>
           <Button
             variant="primary"
