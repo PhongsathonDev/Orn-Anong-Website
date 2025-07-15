@@ -67,40 +67,26 @@ function WebIT() {
       {/* Hero Section - Minimal Style */}
       <div style={{
         position: 'relative',
-        background: 'linear-gradient(120deg, #f8fafc 60%, #e3e6ee 100%)',
         minHeight: '220px',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
         padding: '80px 0 40px',
         marginBottom: '0',
+        overflow: 'hidden',
       }}>
+        {/* Blurred background layer */}
         <div style={{
-          maxWidth: 700,
+          position: 'absolute',
+          top: 0,
+          left: 0,
           width: '100%',
-          textAlign: 'center',
-          zIndex: 2,
-        }}>
-          <h1 style={{
-            fontSize: '2.5rem',
-            fontWeight: 700,
-            margin: 0,
-            color: '#2d3a4b',
-            letterSpacing: '-1px',
-            lineHeight: 1.2,
-          }}>
-            บริการออกแบบ พัฒนาเว็บไซต์และไอที
-          </h1>
-          <p style={{
-            fontSize: '1.1rem',
-            color: '#5a6270',
-            margin: '18px 0 0',
-            fontWeight: 400,
-            letterSpacing: 0,
-          }}>
-            ครบถ้วนทุกบริการด้านกฎหมายสำหรับธุรกิจและบุคคล
-          </p>
-        </div>
+          height: '100%',
+          background: 'url(https://www.mindphp.com/images/2022/07/website_development.jpg)',
+          backgroundSize: 'cover',
+          filter: 'blur(8px)',
+          zIndex: 0,
+        }} />
         {/* Minimalist overlay shape */}
         <div style={{
           position: 'absolute',
@@ -112,6 +98,39 @@ function WebIT() {
           opacity: 0.7,
           zIndex: 1,
         }} />
+        {/* Content above blur */}
+        <div style={{
+          maxWidth: 700,
+          width: '100%',
+          textAlign: 'center',
+          zIndex: 2,
+          marginTop: '50px',
+          marginBottom: '50px',
+          position: 'relative',
+          background: 'linear-gradient(135deg, #ffffffb1 100%, #1f2937 0%)',
+          borderRadius: "12px",
+          padding: '15px',
+        }}>
+          <h1 style={{
+            fontSize: '2.5rem',
+            fontWeight: 700,
+            margin: 0,
+            color: '#ff4848ff',
+            letterSpacing: '-1px',
+            lineHeight: 1.2,
+          }}>
+            บริการออกแบบ พัฒนาเว็บไซต์และไอที
+          </h1>
+          <p style={{
+            fontSize: '1.1rem',
+            color: '#4857ffff',
+            margin: '18px 0 0',
+            fontWeight: 400,
+            letterSpacing: 0,
+          }}>
+            ครบถ้วนทุกบริการด้านกฎหมายสำหรับธุรกิจและบุคคล
+          </p>
+        </div>
       </div>
 
       {/* Services List - Ultra Minimal */}

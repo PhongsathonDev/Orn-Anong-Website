@@ -1,11 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import MostPopularCourses from "../OurServicesSection";
 
 
 function AccountingPayroll() {
   const [visibleItems, setVisibleItems] = useState([]);
-
-
 
   useEffect(() => {
     // Animate items one by one
@@ -139,6 +138,9 @@ function AccountingPayroll() {
           ))}
         </div>
       </div>
+
+      {/* Most Popular Courses Component */}
+      {/* <MostPopularCourses /> */}
 
       <style jsx>{`
         @keyframes fadeInUp {

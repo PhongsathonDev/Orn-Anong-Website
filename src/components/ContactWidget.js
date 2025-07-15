@@ -53,7 +53,7 @@ function ContactWidget() {
 
           {/* Line */}
           <motion.a
-            href="https://line.me/ti/p/..."
+            href="https://line.me/R/ti/p/@443namoj"
             target="_blank"
             rel="noopener noreferrer"
             whileHover={{ scale: 1.1 }}

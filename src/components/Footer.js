@@ -9,10 +9,10 @@ const Footer = () => (
       color: "#ffffff",
     }}
   >
-    <div className="footer-section">
+    <div className="footer-section" >
       <div className="container">
         <div className="row">
-          <div className="col-lg-4 col-md-6 mb-4">
+          <div className="col-lg-4 col-md-6 mb-4" style={{ width: "410px" }}>
             <div className="d-flex align-items-center mb-3">
               <img
                 src={logoImage}
@@ -30,14 +30,40 @@ const Footer = () => (
               style={{
                 fontSize: "0.95rem",
                 color: "rgba(255, 255, 255, 0.8)",
+                width: "350px"
               }}
             >
               ผู้เชี่ยวชาญด้านบัญชี การสอบบัญชี และการให้คำปรึกษาทางการเงิน
               ด้วยทีมงานมืออาชีพและประสบการณ์จริง
             </p>
+            <div style={{ display: "flex", justifyContent: "left", alignItems: "left", gap: "18px" }}>
+                <a
+                    href="https://www.consultant.pdmo.go.th/"
+                    target="_blank"
+                    rel="www.consultant.pdmo.go.th"
+                  > 
+                <img
+                  src={require("../image/consultant2.png")}
+                  alt="Consultant Certificate"
+                  style={{
+                    maxWidth: "348px",
+                    width: "100%",
+                    height: "auto",
+                    // background: "white",
+                    paddingTop: "0px",
+                    paddingBottom: "10px",
+                    paddingLeft: "12px",
+                    paddingRight: "12px",
+                    borderRadius: "12px",
+                    marginTop: "8px",
+                    
+                  }}
+                />
+                </a>
+                </div>
           </div>
 
-          <div className="col-lg-2 col-md-6 mb-4">
+          <div className="col-lg-2 col-md-6 mb-4" style={{ width: "250px" }}>
             <h6
               style={{
                 fontFamily: "Prompt, sans-serif",
@@ -48,16 +74,19 @@ const Footer = () => (
             </h6>
             <div className="footer-links">
               <p>
-                <a href="#our-services">การทำบัญชี</a>
+                <a href="#our-services">ด้านกฎหมาย</a>
               </p>
               <p>
-                <a href="#our-services">การตรวจสอบบัญชี</a>
+                <a href="#our-services">จัดทำบัญชีและเงินเดือน</a>
               </p>
               <p>
-                <a href="#our-services">คำปรึกษาด้านภาษา</a>
+                <a href="#our-services">ตรวจสอบบัญชี</a>
               </p>
               <p>
-                <a href="#our-services">วางแผนภาษี</a>
+                <a href="#our-services">ตรวจสอบภายใน</a>
+              </p>
+              <p>
+                <a href="#our-services">ออกแบบพัฒนาเว็บไซต์และไอที</a>
               </p>
             </div>
           </div>
@@ -93,13 +122,35 @@ const Footer = () => (
               <br />
               ✉️ info@ornanongaccounting.com
             </p>
+            <a
+                    href="https://lawyerscouncil.or.th/"
+                    target="_blank"
+                    rel="lawyerscouncil.or.th"
+                  > 
+            <img
+                  src={require("../image/lawyerscouncil4.png")}
+                  alt="Lawyers Council Certificate"
+                  style={{
+                    maxWidth: "280px",
+                    width: "100%",
+                    height: "auto",
+                    // background: "white",
+                    paddingTop: "10px",
+                    paddingBottom: "10px",
+                    paddingLeft: "5px",
+                    paddingRight: "5px",
+                    borderRadius: "12px",
+                    
+                  }}
+                />
+                </a>
           </div>
 
           <div className="col-lg-3 col-md-6 mb-4">
             <h6
               style={{
                 fontFamily: "Prompt, sans-serif",
-                marginBottom: "1rem",
+                marginBottom: "0.2rem",
               }}
             >
               ติดตามเรา
@@ -114,7 +165,7 @@ const Footer = () => (
                 <FaFacebookSquare />
               </a>
               <a
-                href="https://line.me/ti/p/..."
+                href="https://line.me/R/ti/p/@443namoj"
                 target="_blank"
                 rel="noopener noreferrer"
                 style={{ margin: "0 15px 0 0", color: "#00c300" }}
@@ -132,17 +183,43 @@ const Footer = () => (
               style={{
                 fontSize: "0.9rem",
                 color: "rgba(255, 255, 255, 0.8)",
-                marginTop: "1rem",
+                marginTop: "0.5rem",
+
               }}
             >
               เวลาทำการ: จันทร์-ศุกร์ 9:00-17:00 น.
-              <br />
+              <div style={{
+
+
+                marginRight: "75px",
+              }}>
+                  <a
+                    href="https://www.dbd.go.th/"
+                    target="_blank"
+                    rel="www.dbd.go.th"
+                  >
+                    <img
+                      src={require("../image/dbd-certified.png")}
+                      alt="DBD Certified Accounting Practice"
+                      style={{
+                        maxWidth: "222px",
+                        width: "100%",
+                        height: "auto",
+                        background: "white",
+                        padding: "10px",
+                        borderRadius: "12px",
+                        marginTop: "10px",
+                      }}
+                    />
+                  </a>
+                
+                
+              </div>
             </p>
           </div>
         </div>
       </div>
     </div>
-
     <div
       style={{
         borderTop: "1px solid rgba(255, 255, 255, 0.1)",
@@ -161,6 +238,7 @@ const Footer = () => (
             >
               © 2025 บริษัท สำนักงานอรอนงค์การบัญชีและสอบบัญชี จำกัด
             </p>
+            
           </div>
           <div className="col-md-6 text-md-end">
             <p
@@ -172,7 +250,9 @@ const Footer = () => (
             >
               สงวนลิขสิทธิ์ทุกการใช้งาน
             </p>
+            
           </div>
+          
         </div>
       </div>
     </div>
