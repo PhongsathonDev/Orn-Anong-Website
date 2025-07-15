@@ -105,7 +105,8 @@ function HomePage() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 1 }}
                 style={{
-                  fontSize: "5.5rem",
+                  marginTop: "50px",
+                  fontSize: "5rem",
                   fontWeight: "bold",
                   fontFamily: "Prompt, sans-serif",
                   lineHeight: "1.2",
@@ -122,7 +123,7 @@ function HomePage() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 1, delay: 0.3 }}
                 style={{
-                  fontSize: "1.8rem",
+                  fontSize: "1.5rem",
                   fontFamily: "Prompt, sans-serif",
                   color: "rgb(63, 67, 75)",
                   fontWeight: "400",
@@ -826,7 +827,7 @@ function HomePage() {
         <OurServicesSection />
       </div>
 
-      {/* ความคิดเห็นจากลูกค้า */}
+      {/* ความคิดเห็นจากลูกค้า
       <div
         className="container"
         style={{ paddingTop: "80px", paddingBottom: "80px" }}
@@ -965,7 +966,7 @@ function HomePage() {
             </motion.div>
           ))}
         </div>
-      </div>
+      </div> */}
 
       {/* ติดต่อเรา */}
       <div

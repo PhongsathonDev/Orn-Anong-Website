@@ -11,6 +11,7 @@ import WebIT from './components/services/WebIT';
 import InternalAudit from './components/services/InternalAudit';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Footer from './components/Footer';
+import Career from './components/Career';
 import ContactWidget from './components/ContactWidget';
 
 const router = createBrowserRouter([
@@ -22,6 +23,7 @@ const router = createBrowserRouter([
   { path: "/services/audit", element: <Audit /> },
   { path: "/services/internal-audit", element: <InternalAudit /> },
   { path: "/services/web-it", element: <WebIT /> },
+  { path: "/career", element: <Career /> },
   { path: "/*", element: <NotFoundPage /> },
 ]);
 

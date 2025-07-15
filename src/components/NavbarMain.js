@@ -76,8 +76,8 @@ const NavbarMain = () => {
         <img
           src={logoImage}
           alt="Logo"
-          width="75"
-          height="75"
+          width={isScrolled ? "60" : "75"}
+          height={isScrolled ? "60" : "75"}
           className="me-2"
           style={{ 
             borderRadius: "50%",
@@ -85,14 +85,16 @@ const NavbarMain = () => {
           }}
         />
         <span
-          className="fw-bold fs-4"
+          className="fw-bold"
           style={{ 
             fontFamily: "Prompt, sans-serif",
+            fontSize: isScrolled ? "1.2rem" : "1.5rem", // ปรับขนาดตาม scroll
             color: isScrolled ? " #1e293b" : "rgb(0, 0, 0)",
             transition: "all 0.3s ease",
+            whiteSpace: "nowrap" // ป้องกันชื่อขึ้นบรรทัดใหม่
           }}
         >
-          &nbsp;&nbsp; ORNANONG ACCOUNTING
+          &nbsp;&nbsp;ORNANONG ACCOUNTING
         </span>
       </Navbar.Brand>
     </div>
@@ -103,6 +105,7 @@ const NavbarMain = () => {
           className="nav-item"
           style={{
             color: isScrolled ? " #1e293b" : "rgb(0, 0, 0)",
+            fontSize: isScrolled ? "1.2rem" : "1.4rem",
             transition: "all 0.3s ease",
           }}
         >
@@ -118,6 +121,7 @@ const NavbarMain = () => {
           className="nav-item"
           style={{
             color: isScrolled ? " #1e293b" : "rgb(0, 0, 0)",
+            fontSize: isScrolled ? "1.2rem" : "1.4rem",
             transition: "all 0.3s ease",
           }}
         >
@@ -140,10 +144,25 @@ const NavbarMain = () => {
             className="nav-item"
             style={{
               color: isScrolled ? " #1e293b" : "rgb(0, 0, 0)",
+              fontSize: isScrolled ? "1.2rem" : "1.4rem",
               transition: "all 0.3s ease",
+              display: "flex",
+              alignItems: "center",
+              gap: "6px"
             }}
           >
             บริการของเรา
+            <span 
+              style={{
+                display: "inline-block",
+                transition: "transform 0.3s",
+                transform: showServicesDropdown ? "rotate(180deg)" : "none",
+                fontSize: "14px",
+                color: showServicesDropdown ? "#3b82f6" : "#64748b"
+              }}
+            >
+              ▼
+            </span>
           </span>
         </a>
         {showServicesDropdown && (
@@ -215,7 +234,7 @@ const NavbarMain = () => {
                       padding: "20px",
                       zIndex: 1002,
                       border: "1px solid rgba(0, 0, 0, 0.08)",
-                      marginRight: "12px",
+                      marginRight: "0px",
                       background: isScrolled
                         ? "rgba(255,255,255,1)"
                         : "rgba(255,255,255,0.98)",
@@ -462,7 +481,7 @@ const NavbarMain = () => {
                       padding: "20px",
                       zIndex: 1002,
                       border: "1px solid rgba(0, 0, 0, 0.08)",
-                      marginRight: "12px",
+                      marginRight: "0px",
                       background: isScrolled
                         ? "rgba(255,255,255,1)"
                         : "rgba(255,255,255,0.98)",
@@ -580,7 +599,7 @@ const NavbarMain = () => {
                       padding: "20px",
                       zIndex: 1002,
                       border: "1px solid rgba(0, 0, 0, 0.08)",
-                      marginRight: "12px",
+                      marginRight: "0px",
                       background: isScrolled
                         ? "rgba(255,255,255,1)"
                         : "rgba(255,255,255,0.98)",
@@ -679,7 +698,7 @@ const NavbarMain = () => {
                       padding: "20px",
                       zIndex: 1002,
                       border: "1px solid rgba(0, 0, 0, 0.08)",
-                      marginRight: "12px",
+                      marginRight: "0px",
                       background: isScrolled
                         ? "rgba(255,255,255,1)"
                         : "rgba(255,255,255,0.98)",
@@ -706,8 +725,11 @@ const NavbarMain = () => {
                       margin: 0,
                       fontSize: "14px",
                       lineHeight: "1.6",
-                      maxHeight: "300px",
-                      overflowY: "auto"
+                      display: "grid",
+                      gridTemplateColumns: "1fr 1fr",
+                      gap: "0 24px"
+                      // maxHeight: "300px",
+                      // overflowY: "auto"
                     }}>
                       {[
                         'บริการงานตรวจสอบภายใน (IA)',
@@ -795,7 +817,7 @@ const NavbarMain = () => {
                       padding: "20px",
                       zIndex: 1002,
                       border: "1px solid rgba(0, 0, 0, 0.08)",
-                      marginRight: "12px",
+                      marginRight: "0px",
                       background: isScrolled
                         ? "rgba(255,255,255,1)"
                         : "rgba(255,255,255,0.98)",
@@ -869,6 +891,7 @@ const NavbarMain = () => {
           className="nav-item"
           style={{
             color: isScrolled ? " #1e293b" : "rgb(0, 0, 0)",
+            fontSize: isScrolled ? "1.2rem" : "1.4rem",
             transition: "all 0.3s ease",
           }}
         >
