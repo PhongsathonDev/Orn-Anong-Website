@@ -172,7 +172,7 @@ function Career() {
   };
 
   return (
-    <div style={{ background: '#fafbff', minHeight: '100vh', paddingBottom: 60 }}>
+    <div style={{ background: '#fafbff', minHeight: '100vh', paddingBottom: 60, fontFamily: 'Prompt, sans-serif' }}>
       <div style={{ maxWidth: 1200, margin: '0 auto', padding: '60px 20px 0 20px', marginTop: 150 }}>
         <div style={{ color: '#7b7fd1', fontWeight: 600, letterSpacing: 2, fontSize: 16, marginBottom: 10 }}>
           รับสมัครนักศึกษาฝึกงาน

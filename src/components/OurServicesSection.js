@@ -600,7 +600,7 @@ function MostPopularCourses() {
                 )}
                 <div style={{ padding: '24px' }}>
                   <div style={{ marginBottom: '12px' }}>
-                    <span style={{
+                    {/* <span style={{
                       background: course.level === 'Beginner' ? '#e8f5e8' : 
                                  course.level === 'Intermediate' ? '#fff3cd' : 
                                  course.level === 'Advanced' ? '#f8d7da' : '#e3f2fd',
@@ -621,7 +621,7 @@ function MostPopularCourses() {
                       cursor: 'pointer'
                     }}>
                       ♡
-                    </span>
+                    </span> */}
                   </div>
                   <h4 style={{
                     fontSize: '1.25rem',
@@ -640,7 +640,7 @@ function MostPopularCourses() {
                   }}>
                     {course.description}
                   </p>
-                  <div style={{
+                  {/* <div style={{
                     display: 'flex',
                     alignItems: 'center',
                     gap: '8px',
@@ -668,7 +668,7 @@ function MostPopularCourses() {
                       <span style={{ color: '#fd7e14' }}>📚</span>
                       {course.lectures} lectures
                     </div>
-                  </div>
+                  </div> */}
                 </div>
               </div>
             </a>

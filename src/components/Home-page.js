@@ -6,6 +6,7 @@ import OurServicesSection from "./OurServicesSection";
 import logoImage from "../image/favicon.jpg";
 import "../css/Home-page.css";
 import about from "../image/about.webp";
+import Main from "./Main";
 
 function HomePage() {
   // ใช้ localStorage เพื่อแสดง splash เฉพาะครั้งแรก
@@ -90,7 +91,7 @@ function HomePage() {
       <div className="hero-wrapper ">
         <div
           className="container mt-5"
-          style={{ paddingTop: "150px", paddingBottom: "180px" }}
+          style={{ paddingTop: "200px", paddingBottom: "180px", maxWidth: "1200px" }}
         >
           <motion.div
             className="row align-items-center"
@@ -99,41 +100,9 @@ function HomePage() {
             transition={{ duration: 1.2 }}
           >
             <div className="col-lg-8 mx-auto text-center">
-              <motion.h1
-                className="mb-4"
-                initial={{ opacity: 0, y: 50 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 1 }}
-                style={{
-                  marginTop: "50px",
-                  fontSize: "5rem",
-                  fontWeight: "bold",
-                  fontFamily: "Prompt, sans-serif",
-                  lineHeight: "1.2",
-                  color: "rgb(51, 95, 214)",
-                  textShadow: "180 2px 8px rgb(231, 231, 231)",
-                }}
-              >
-                สำนักงานอรอนงค์ <br /> การบัญชีและสอบบัญชี
-              </motion.h1>
-
-              <motion.h2
-                className="mb-5"
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 1, delay: 0.3 }}
-                style={{
-                  fontSize: "1.5rem",
-                  fontFamily: "Prompt, sans-serif",
-                  color: "rgb(63, 67, 75)",
-                  fontWeight: "400",
-                  lineHeight: "1.6",
-                }}
-              >
-                ผู้เชี่ยวชาญด้านบัญชี การสอบบัญชี และการให้คำปรึกษาทางการเงิน
-                <br />
-                ด้วยทีมงานมืออาชีพและประสบการณ์จริงกว่า 15 ปี
-              </motion.h2>
+              <main>
+                <Main />
+              </main>
 
               <motion.div
                 className="d-flex justify-content-center gap-4 flex-wrap"
@@ -148,6 +117,8 @@ function HomePage() {
                       fontFamily: "Prompt, sans-serif",
                       minWidth: "200px",
                       height: "55px",
+                      borderRadius: "8px",
+                      marginTop: "20px",
                     }}
                     className="shadow__btn me-3"
                   >
@@ -165,11 +136,12 @@ function HomePage() {
                       border: "2px solid #3b82f6",
                       color: "#3b82f6",
                       padding: "12px 32px",
-                      borderRadius: "50px",
+                      borderRadius: "8px",
                       fontWeight: "600",
                       letterSpacing: "2px",
                       textTransform: "uppercase",
                       transition: "all 0.3s ease",
+                      marginTop: "20px",
                     }}
                     onMouseEnter={(e) => {
                       e.target.style.background = "#3b82f6";
@@ -185,6 +157,7 @@ function HomePage() {
                     บริการของเรา
                   </button>
                 </a>
+                
               </motion.div>
 
               {/* Key highlights */}
@@ -194,15 +167,13 @@ function HomePage() {
       </div>
 
       {/* เกี่ยวกับเรา */}
-      <div
+      <section
         id="getstart"
+        className="position-relative overflow-hidden"
         style={{
           paddingTop: "120px",
-          paddingBottom: "60px",
-          background:
-            "https://media.istockphoto.com/id/2045620685/th/%E0%B8%A3%E0%B8%B9%E0%B8%9B%E0%B8%96%E0%B9%88%E0%B8%B2%E0%B8%A2/%E0%B8%AB%E0%B8%99%E0%B8%B1%E0%B8%87%E0%B8%AA%E0%B8%B7%E0%B8%AD%E0%B8%84%E0%B8%A7%E0%B8%B2%E0%B8%A1%E0%B8%A2%E0%B8%B8%E0%B8%95%E0%B8%B4%E0%B8%98%E0%B8%A3%E0%B8%A3%E0%B8%A1-%E0%B8%AB%E0%B8%99%E0%B8%B1%E0%B8%87%E0%B8%AA%E0%B8%B7%E0%B8%AD-%E0%B9%81%E0%B8%A5%E0%B8%B0%E0%B8%81%E0%B8%8E%E0%B8%AB%E0%B8%A1%E0%B8%B2%E0%B8%A2%E0%B8%9A%E0%B8%99%E0%B9%82%E0%B8%95%E0%B9%8A%E0%B8%B0%E0%B8%AA%E0%B9%8D%E0%B8%B2%E0%B8%AB%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B8%9E%E0%B8%B4%E0%B8%88%E0%B8%B2%E0%B8%A3%E0%B8%93%E0%B8%B2%E0%B8%84%E0%B8%94%E0%B8%B5%E0%B8%82%E0%B8%AD%E0%B8%87%E0%B8%A8%E0%B8%B2%E0%B8%A5-%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B8%AD%E0%B8%AD%E0%B8%81%E0%B8%81%E0%B8%8E%E0%B8%AB%E0%B8%A1%E0%B8%B2%E0%B8%A2-%E0%B8%AB%E0%B8%A3%E0%B8%B7%E0%B8%AD%E0%B8%A3.jpg?s=612x612&w=0&k=20&c=L4z7E3SfTjHEP__CbY5OAPOuxflUcaxqlSscnob3a5Y=",
-          position: "relative",
-          overflow: "hidden",
+          paddingBottom: "80px",
+          background: "linear-gradient(135deg, #f8fafc 0%, #ffffff 50%, #f1f5f9 100%)",
         }}
       >
         {/* Background decorative elements */}
@@ -234,6 +205,7 @@ function HomePage() {
         ></div>
 
         <div className="container">
+          {/* Header Section */}
           <motion.div
             className="text-center mb-5"
             initial={{ opacity: 0, y: 50 }}
@@ -242,16 +214,13 @@ function HomePage() {
             viewport={{ once: true }}
           >
             <motion.h2
+              className="display-4 fw-bold mb-3"
               style={{
-                fontSize: "2.8rem",
-                fontWeight: "800",
                 fontFamily: "Prompt, sans-serif",
-                background:
-                  "linear-gradient(135deg, #3b82f6 0%, #8b5cf6 50%, #06b6d4 100%)",
+                background: "linear-gradient(135deg, #3b82f6 0%, #8b5cf6 50%, #06b6d4 100%)",
                 WebkitBackgroundClip: "text",
                 WebkitTextFillColor: "transparent",
                 backgroundClip: "text",
-                marginBottom: "1rem",
               }}
             >
               เกี่ยวกับเรา
@@ -261,16 +230,19 @@ function HomePage() {
               whileInView={{ width: "120px" }}
               transition={{ duration: 1, delay: 0.5 }}
               viewport={{ once: true }}
+              className="mx-auto mb-4"
               style={{
                 height: "4px",
                 background: "linear-gradient(90deg, #3b82f6, #8b5cf6)",
-                margin: "0 auto",
                 borderRadius: "2px",
               }}
-            ></motion.div>
+            />
+            <p className="lead text-muted" style={{ fontFamily: "Prompt, sans-serif", maxWidth: "600px", margin: "0 auto" }}>
+              มากกว่า 40 ปีแห่งประสบการณ์ในการให้บริการด้านบัญชี การสอบบัญชี และให้คำปรึกษาทางการเงิน
+            </p>
           </motion.div>
 
-          {/* แถวภาพ + ข้อความ */}
+          {/* Main Content Row */}
           <motion.div
             className="row align-items-center mb-5"
             initial={{ opacity: 0, y: 50 }}
@@ -278,39 +250,40 @@ function HomePage() {
             transition={{ duration: 1 }}
             viewport={{ once: true }}
           >
-            <div className="col-lg-6 mb-4">
+            {/* Image Column */}
+            <div className="col-lg-6 mb-4 mb-lg-0">
               <motion.div
                 whileHover={{ scale: 1.02 }}
                 transition={{ duration: 0.3 }}
-                style={{ position: "relative" }}
+                className="position-relative"
               >
                 <img
                   src={about}
-                  alt="เกี่ยวกับเรา"
+                  alt="เกี่ยวกับบริษัท สำนักงานอรอนงค์ การบัญชีและสอบบัญชี"
                   className="img-fluid rounded-4 shadow-lg"
                   style={{
                     width: "100%",
-                    height: "320px",
+                    height: "400px",
                     objectFit: "cover",
-                    border: "4px solid rgba(59, 130, 246, 0.1)",
+                    border: "3px solid rgba(59, 130, 246, 0.1)",
                   }}
                 />
                 <div
+                  className="position-absolute"
                   style={{
-                    position: "absolute",
-                    top: "-10px",
-                    left: "-10px",
-                    right: "10px",
-                    bottom: "10px",
-                    background:
-                      "linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(139, 92, 246, 0.1))",
-                    borderRadius: "20px",
+                    top: "-15px",
+                    left: "-15px",
+                    right: "15px",
+                    bottom: "15px",
+                    background: "linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(139, 92, 246, 0.1))",
+                    borderRadius: "25px",
                     zIndex: -1,
                   }}
-                ></div>
+                />
               </motion.div>
             </div>
             
+            {/* Content Column */}
             <div className="col-lg-6">
               <motion.div
                 initial={{ opacity: 0, x: 50 }}
@@ -318,306 +291,109 @@ function HomePage() {
                 transition={{ duration: 0.8, delay: 0.3 }}
                 viewport={{ once: true }}
               >
-                <div
-                  style={{
-                    background: "rgba(255, 255, 255, 0.8)",
-                    padding: "2rem",
-                    borderRadius: "16px",
-                    boxShadow: "0 8px 25px rgba(0, 0, 0, 0.1)",
-                    backdropFilter: "blur(10px)",
-                    border: "1px solid rgba(255, 255, 255, 0.2)",
-                  }}
-                >
-                  <h3
-                    className="mb-3"
-                    style={{
-                      fontFamily: "Prompt, sans-serif",
-                      fontSize: "2rem",
-                      fontWeight: "700",
-                      color: "#1e293b",
-                      lineHeight: "1.2",
-                    }}
-                  >
-                    เราคือใคร?
-                  </h3>
-                  <p
-                    style={{
-                      fontSize: "1.1rem",
-                      lineHeight: "1.8rem",
-                      fontFamily: "Prompt, sans-serif",
-                      color: "#475569",
-                      marginBottom: "1.2rem",
-                    }}
-                  >
-                    บริษัท{" "}
-                    <strong style={{ color: "#3b82f6" }}>
-                      สำนักงานอรอนงค์ การบัญชีและสอบบัญชี จำกัด{" "}
-                    </strong>
-                    คือผู้เชี่ยวชาญด้านบัญชี การสอบบัญชี
-                    และการให้คำปรึกษาทางการเงิน โดยทีมงานผู้สอบบัญชีรับอนุญาต
-                    (CPA) และที่ปรึกษาที่มีประสบการณ์จริง
-                  </p>
+                <div className="card border-0 shadow-lg h-100">
+                  <div className="card-body p-4">
+                    <h3 className="card-title h2 mb-4 text-primary" style={{ fontFamily: "Prompt, sans-serif" }}>
+                      🏢 เราคือใคร?
+                    </h3>
+                    <p className="card-text fs-5 mb-4" style={{ fontFamily: "Prompt, sans-serif", lineHeight: "1.8" }}>
+                      <strong className="text-primary">สำนักงานอรอนงค์ การบัญชีและสอบบัญชี จำกัด</strong> 
+                      เป็นผู้เชี่ยวชาญด้านบัญชี การสอบบัญชี และการให้คำปรึกษาทางการเงิน 
+                      ด้วยทีมงานผู้สอบบัญชีรับอนุญาต (CPA) และที่ปรึกษาผู้มีประสบการณ์จริง
+                    </p>
 
-                  {/* เพิ่มจุดเด่นย่อย */}
-                  <div className="d-flex flex-column gap-3">
-                    <div className="d-flex align-items-center">
-                      <div
-                        style={{
-                          width: "12px",
-                          height: "12px",
-                          background:
-                            "linear-gradient(45deg, #3b82f6, #8b5cf6)",
-                          borderRadius: "50%",
-                          marginRight: "1rem",
-                        }}
-                      ></div>
-                      <span
-                        style={{
-                          fontSize: "1.1rem",
-                          fontFamily: "Prompt, sans-serif",
-                          color: "#64748b",
-                        }}
-                      >
-                        ประสบการณ์กว่า 15 ปี
-                      </span>
+                    {/* Achievement Stats */}
+                    <div className="row g-3 mb-4">
+                      <div className="col-sm-6">
+                        <div className="d-flex align-items-center p-3 bg-light rounded-3">
+                          <div className="bg-primary text-white rounded-circle d-flex align-items-center justify-content-center me-3" style={{ width: "50px", height: "50px" }}>
+                            <span className="fw-bold">40+</span>
+                          </div>
+                          <div>
+                            <div className="fw-bold text-primary">ปีประสบการณ์</div>
+                            <small className="text-muted">ในวงการบัญชี</small>
+                          </div>
+                        </div>
+                      </div>
+                      <div className="col-sm-6">
+                        <div className="d-flex align-items-center p-3 bg-light rounded-3">
+                          <div className="bg-success text-white rounded-circle d-flex align-items-center justify-content-center me-3" style={{ width: "50px", height: "50px" }}>
+                            <span className="fw-bold">CPA</span>
+                          </div>
+                          <div>
+                            <div className="fw-bold text-success">ทีมผู้เชี่ยวชาญ</div>
+                            <small className="text-muted">ใบอนุญาตครบถ้วน</small>
+                          </div>
+                        </div>
+                      </div>
                     </div>
-                    <div className="d-flex align-items-center">
-                      <div
-                        style={{
-                          width: "12px",
-                          height: "12px",
-                          background:
-                            "linear-gradient(45deg, #10b981, #3b82f6)",
-                          borderRadius: "50%",
-                          marginRight: "1rem",
-                        }}
-                      ></div>
-                      <span
-                        style={{
-                          fontSize: "1.1rem",
-                          fontFamily: "Prompt, sans-serif",
-                          color: "#64748b",
-                        }}
-                      >
-                        ทีมงานผู้เชี่ยวชาญ CPA
-                      </span>
-                    </div>
-                    <div className="d-flex align-items-center">
-                      <div
-                        style={{
-                          width: "12px",
-                          height: "12px",
-                          background:
-                            "linear-gradient(45deg, #f59e0b, #10b981)",
-                          borderRadius: "50%",
-                          marginRight: "1rem",
-                        }}
-                      ></div>
-                      <span
-                        style={{
-                          fontSize: "1.1rem",
-                          fontFamily: "Prompt, sans-serif",
-                          color: "#64748b",
-                        }}
-                      >
-                        บริการครบวงจร
-                      </span>
-                    </div>
+
+                    <a href="#our-services" className="btn btn-primary btn-lg px-4">
+                      ดูบริการของเรา <i className="fas fa-arrow-right ms-2"></i>
+                    </a>
                   </div>
                 </div>
               </motion.div>
             </div>
           </motion.div>
 
-          {/* จุดเด่นบริษัท */}
-          <div className="row text-center mt-5">
+          {/* Features Cards */}
+          <div className="row g-4 mb-5">
             {[
               {
-                icon: "📊",
+                icon: "💼",
                 title: "มืออาชีพ",
-                desc: "ทีมงานมีใบอนุญาตและประสบการณ์จริง",
-                color: "#3b82f6",
-                bgGradient: "linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%)",
+                desc: "ทีมงานมีใบอนุญาตและประสบการณ์จริงในวงการบัญชีมากกว่า 40 ปี",
+                color: "primary",
+                delay: 0
               },
               {
                 icon: "🔍",
                 title: "โปร่งใส",
-                desc: "รายงานตรงไปตรงมา ตรวจสอบได้ทุกขั้นตอน",
-                color: "#10b981",
-                bgGradient: "linear-gradient(135deg, #d1fae5 0%, #a7f3d0 100%)",
+                desc: "รายงานตรงไปตรงมา ตรวจสอบได้ทุกขั้นตอน พร้อมคำอธิบายที่เข้าใจง่าย",
+                color: "success",
+                delay: 0.2
               },
               {
                 icon: "🤝",
                 title: "ดูแลคุณเสมอ",
-                desc: "ให้คำปรึกษาแบบเข้าใจง่ายและตรงจุด",
-                color: "#8b5cf6",
-                bgGradient: "linear-gradient(135deg, #ede9fe 0%, #ddd6fe 100%)",
+                desc: "ให้คำปรึกษาแบบเข้าใจง่าย ตรงจุด และพร้อมช่วยเหลือตลอด 24/7",
+                color: "info",
+                delay: 0.4
               },
             ].map((item, i) => (
               <motion.div
-                className="col-lg-4 col-md-6 mb-4"
+                className="col-lg-4 col-md-6"
                 key={i}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: i * 0.2, duration: 0.8 }}
+                transition={{ delay: item.delay, duration: 0.8 }}
                 viewport={{ once: true }}
               >
                 <motion.div
-                  className="h-100 position-relative"
-                  whileHover={{ y: -10 }}
+                  whileHover={{ y: -10, scale: 1.02 }}
                   transition={{ duration: 0.3 }}
-                  style={{
-                    background: item.bgGradient,
-                    padding: "2rem 1.2rem",
-                    borderRadius: "16px",
-                    boxShadow: "0 6px 20px rgba(0, 0, 0, 0.1)",
-                    border: `2px solid ${item.color}20`,
-                    overflow: "hidden",
-                    cursor: "pointer",
-                  }}
-                  onMouseEnter={(e) => {
-                    e.currentTarget.style.boxShadow = `0 15px 40px ${item.color}30`;
-                  }}
-                  onMouseLeave={(e) => {
-                    e.currentTarget.style.boxShadow =
-                      "0 8px 25px rgba(0, 0, 0, 0.1)";
-                  }}
+                  className={`card border-0 shadow h-100 border-top border-${item.color} border-4`}
                 >
-                  {/* Background decoration */}
-                  <div
-                    style={{
-                      position: "absolute",
-                      top: "-30px",
-                      right: "-30px",
-                      width: "80px",
-                      height: "80px",
-                      background: `${item.color}15`,
-                      borderRadius: "50%",
-                    }}
-                  ></div>
-
-                  <div
-                    style={{
-                      fontSize: "3rem",
-                      marginBottom: "1.2rem",
-                      background: `linear-gradient(45deg, ${item.color}, ${item.color}aa)`,
-                      borderRadius: "50%",
-                      width: "70px",
-                      height: "70px",
-                      display: "flex",
-                      alignItems: "center",
-                      justifyContent: "center",
-                      margin: "0 auto 1.2rem auto",
-                      boxShadow: `0 6px 15px ${item.color}30`,
-                      fontSize: "1.8rem",
-                    }}
-                  >
-                    <span style={{ color: "white" }}>{item.icon}</span>
+                  <div className="card-body text-center p-4">
+                    <div className={`bg-${item.color} bg-opacity-10 rounded-circle d-inline-flex align-items-center justify-content-center mb-3`} style={{ width: "80px", height: "80px" }}>
+                      <span style={{ fontSize: "2.5rem" }}>{item.icon}</span>
+                    </div>
+                    <h4 className={`card-title text-${item.color} mb-3`} style={{ fontFamily: "Prompt, sans-serif" }}>
+                      {item.title}
+                    </h4>
+                    <p className="card-text text-muted" style={{ fontFamily: "Prompt, sans-serif", lineHeight: "1.7" }}>
+                      {item.desc}
+                    </p>
                   </div>
-
-                  <h4
-                    className="mb-3"
-                    style={{
-                      fontFamily: "Prompt, sans-serif",
-                      fontSize: "1.4rem",
-                      fontWeight: "700",
-                      color: item.color,
-                    }}
-                  >
-                    {item.title}
-                  </h4>
-                  <p
-                    style={{
-                      fontSize: "1.1rem",
-                      fontFamily: "Prompt, sans-serif",
-                      color: "#64748b",
-                      lineHeight: "1.6",
-                      margin: 0,
-                    }}
-                  >
-                    {item.desc}
-                  </p>
                 </motion.div>
               </motion.div>
             ))}
           </div>
 
-          {/* เนื้อหาสรุปต่อท้าย */}
-          <motion.div
-            className="text-center mt-4"
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ duration: 1, delay: 0.3 }}
-            viewport={{ once: true }}
-            style={{
-              background: "rgba(255, 255, 255, 0.8)",
-              padding: "2rem 1.5rem",
-              borderRadius: "16px",
-              boxShadow: "0 8px 25px rgba(0, 0, 0, 0.1)",
-              backdropFilter: "blur(10px)",
-              border: "1px solid rgba(255, 255, 255, 0.2)",
-              maxWidth: "700px",
-              margin: "2rem auto 0 auto",
-            }}
-          >
-            <p
-              style={{
-                fontSize: "1.2rem",
-                fontFamily: "Prompt, sans-serif",
-                lineHeight: "1.9rem",
-                color: "#475569",
-                margin: 0,
-              }}
-            >
-              เราให้บริการที่
-              <strong style={{ color: "#3b82f6" }}>ครอบคลุม</strong>{" "}
-              ตั้งแต่การทำบัญชี การวางแผนภาษี การจัดทำงบการเงิน
-              ไปจนถึงการวิเคราะห์ข้อมูลและให้คำแนะนำเชิงกลยุทธ์
-              พร้อมสร้างความมั่นใจและเป็นส่วนหนึ่งในการเติบโตของธุรกิจของคุณ
-            </p>
-
-            {/* Call to action */}
-            <motion.div
-              className="mt-4"
-              initial={{ opacity: 0, scale: 0.8 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.6, delay: 0.5 }}
-              viewport={{ once: true }}
-            >
-              <a href="#our-services">
-                <button
-                  style={{
-                    background:
-                      "linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%)",
-                    border: "none",
-                    color: "white",
-                    padding: "10px 25px",
-                    borderRadius: "25px",
-                    fontSize: "1rem",
-                    fontFamily: "Prompt, sans-serif",
-                    fontWeight: "600",
-                    boxShadow: "0 4px 15px rgba(59, 130, 246, 0.3)",
-                    transition: "all 0.3s ease",
-                    cursor: "pointer",
-                  }}
-                  onMouseEnter={(e) => {
-                    e.target.style.transform = "translateY(-2px)";
-                    e.target.style.boxShadow =
-                      "0 6px 20px rgba(59, 130, 246, 0.4)";
-                  }}
-                  onMouseLeave={(e) => {
-                    e.target.style.transform = "translateY(0)";
-                    e.target.style.boxShadow =
-                      "0 4px 15px rgba(59, 130, 246, 0.3)";
-                  }}
-                >
-                  ดูบริการของเรา →
-                </button>
-              </a>
-            </motion.div>
-          </motion.div>
+          
         </div>
-      </div>
+      </section>
       {/* ใบรับรอง */}
       <div
         id="about-duplicate"
@@ -1097,7 +873,7 @@ function HomePage() {
                               margin: "0",
                             }}
                           >
-                            02-276-9968
+                            02-276-9968 
                           </p>
                         </div>
                       </div>
@@ -1139,7 +915,7 @@ function HomePage() {
                               margin: "0",
                             }}
                           >
-                            081-234-5678
+                            086-461-0170
                           </p>
                         </div>
                       </div>
@@ -1181,7 +957,7 @@ function HomePage() {
                               margin: "0",
                             }}
                           >
-                            info@ornanongaccounting.com
+                            oaoffice1984@gmail.com <br /> oaoffice@ornthai.com
                           </p>
                         </div>
                       </div>
@@ -1222,7 +998,7 @@ function HomePage() {
                               margin: "0",
                             }}
                           >
-                            จันทร์-ศุกร์: 9:00 - 17:00 น.
+                            จันทร์-ศุกร์: 8:30 - 17:30 น.
                           </p>
                         </div>
                       </div>
@@ -1243,7 +1019,7 @@ function HomePage() {
                       </h5>
                       <div className="d-flex gap-3">
                         <a
-                          href="https://www.facebook.com/..."
+                          href="https://www.facebook.com/thailandtaxlaw/"
                           target="_blank"
                           rel="noopener noreferrer"
                           style={{
@@ -1281,7 +1057,7 @@ function HomePage() {
                           <FaLine size={22} />
                         </a>
                         <a
-                          href="mailto:info@ornanongaccounting.com"
+                          href="oaoffice@ornthai.com"
                           style={{
                             width: "45px",
                             height: "45px",
@@ -1335,7 +1111,7 @@ function HomePage() {
                       }}
                     >
                       <iframe
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3874.895396133994!2d100.58331867594516!3d13.78289949653901!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30e29e777e651a91%3A0x544990453506849a!2z4LiB4Lij4Li44LiH4LmA4LiK4Li14Lii4Li44LiV4Liq4Liy4Lir4LiB4Lij4Liy4LiK4Lih4Li54Li24LiB4LiX4Liy4LiH!5e0!3m2!1sth!2sth!4v1720685210581!5m2!1sth!2sth"
+                        src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d419.2150425033426!2d100.58528591561652!3d13.795156140159145!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30e29d23e23da677%3A0x14a7d4d171d5a50c!2z4Liq4Liz4LiZ4Lix4LiB4LiH4Liy4LiZ4Lit4Lij4Lit4LiZ4LiH4LiE4LmM4LiB4Liy4Lij4Lia4Lix4LiN4LiK4Li14LmB4Lil4Liw4Liq4Lit4Lia4Lia4Lix4LiN4LiK4Li1!5e0!3m2!1sth!2sth!4v1752635121245!5m2!1sth!2sth"
                         width="100%"
                         height="300"
                         style={{ border: 0 }}
@@ -1372,18 +1148,9 @@ function HomePage() {
                           }}
                         >
                           <strong>รถไฟฟ้า MRT:</strong> สถานีภาวนา ทางออก 3
-                          เดินต่ออีกประมาณ 10 นาที
+                          เดินต่ออีกประมาณ 15 นาที
                         </li>
-                        <li
-                          style={{
-                            fontFamily: "Prompt, sans-serif",
-                            color: "#475569",
-                            fontSize: "0.95rem",
-                            marginBottom: "6px",
-                          }}
-                        >
-                          <strong>รถประจำทาง:</strong> สาย ***, ***, **, ***
-                        </li>
+                        
                         <li
                           style={{
                             fontFamily: "Prompt, sans-serif",

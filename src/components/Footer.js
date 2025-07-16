@@ -7,6 +7,7 @@ const Footer = () => (
     style={{
       background: "linear-gradient(135deg, #1f2937 0%, #111827 100%)",
       color: "#ffffff",
+      fontFamily: "Prompt, sans-serif",
     }}
   >
     <div className="footer-section" >
@@ -120,7 +121,7 @@ const Footer = () => (
             >
               📞 02-276-9968
               <br />
-              ✉️ info@ornanongaccounting.com
+              ✉️ oaoffice@ornthai.com <br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; oaoffice1984@gmail.com
             </p>
             <a
                     href="https://lawyerscouncil.or.th/"
@@ -157,7 +158,7 @@ const Footer = () => (
             </h6>
             <div style={{ fontSize: "2rem" }}>
               <a
-                href="https://www.facebook.com/..."
+                href="https://www.facebook.com/thailandtaxlaw/"
                 target="_blank"
                 rel="noopener noreferrer"
                 style={{ margin: "0 15px 0 0", color: "#3b5998" }}
@@ -187,7 +188,7 @@ const Footer = () => (
 
               }}
             >
-              เวลาทำการ: จันทร์-ศุกร์ 9:00-17:00 น.
+              เวลาทำการ: จันทร์-ศุกร์ 8:30-17:30 น.
               <div style={{
 
 
