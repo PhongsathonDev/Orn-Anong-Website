@@ -1,260 +1,546 @@
-import React from 'react';
-import './Services.css';
+import React from "react";
+import { Container, Row, Col, Card, ListGroup } from "react-bootstrap";
+import { FaGavel } from "react-icons/fa";
+import { motion } from "framer-motion";
+import { margin } from "@mui/system";
 
 function Testament() {
   return (
-    <div className="transfer-pricing-container" >
-      
-    
-      {/* Hero Section */}
-      <section className="hero-section" style={{ fontFamily: 'Prompt, sans-serif', background: `url(https://www.prachachat.net/wp-content/uploads/2021/01/%E0%B8%A5%E0%B8%87%E0%B9%80%E0%B8%9F%E0%B8%8B%E0%B8%9A%E0%B8%B8%E0%B9%8A%E0%B8%81-%E0%B9%82%E0%B8%A5%E0%B9%82%E0%B8%81%E0%B9%89%E0%B8%A5%E0%B8%B2%E0%B8%A2%E0%B8%99%E0%B9%89%E0%B8%B3-2021-01-26T115721.782.png) no-repeat center center/cover` }}>
+    <div
+      style={{
+        background: "#f8f9fa",
+        minHeight: "100vh",
+        paddingTop: 0,
+        paddingBottom: 48,
+      }}
+    >
+      <section
+        className="hero-section"
+        style={{
+          fontFamily: "Prompt, sans-serif",
+          background: `url(https://www.rayonglaw.com/wp-content/uploads/2024/09/%E0%B8%97%E0%B8%99%E0%B8%B2%E0%B8%A2%E0%B8%84%E0%B8%A7%E0%B8%B2%E0%B8%A1%E0%B8%A3%E0%B8%B0%E0%B8%A2%E0%B8%AD%E0%B8%87-1.webp) no-repeat center center/cover`,
+        }}
+      >
         <div className="hero-content">
-          <h1 className="hero-title" style={{ marginTop : '80px', color: 'rgba(255, 75, 75, 1)' }}> บริการจัดทำพินัยกรรม</h1>
-          <p className="hero-subtitle" style={{ color: 'rgba(255, 255, 255, 1)' }} >
-            จัดทำพินัยกรรมอย่างครบวงจร เพื่อช่วยให้คุณวางแผนการส่งต่อทรัพย์สินมรดกได้ตามเจตนารมณ์
+          <h1
+            className="hero-title"
+            style={{ marginTop: "80px", color: "rgba(255, 75, 75, 1)" }}
+          >
+            {" "}
+            จัดทำพินัยกรรม
+          </h1>
+          <p
+            className="hero-subtitle"
+            style={{ color: "rgba(255, 255, 255, 1)" }}
+          >
+            ให้คำปรึกษาและจัดทำพินัยกรรมเพื่อการจัดการทรัพย์สินหลังความตายอย่างมีประสิทธิภาพ
           </p>
-          
-        </div>
-        
-      </section>
-    
-      {/* Introduction Section */}
-      {/* Breadcrumbs Section */}
-      <section className="breadcrumbs-section">
-        <div className="container">
-          <nav className="breadcrumbs">
-            <ol className="breadcrumb-list">
-              <li className="breadcrumb-item">
-                <a href="/" className="breadcrumb-link">หน้าแรก</a>
-              </li>
-              <li className="breadcrumb-separator">
-                <span>›</span>
-              </li>
-              <li className="breadcrumb-item">
-                <a href="/services" className="breadcrumb-link">บริการของเรา</a>
-              </li>
-              <li className="breadcrumb-separator">
-                <span>›</span>
-              </li>
-              <li className="breadcrumb-item breadcrumb-current">
-                <span>บริการจัดทำพินัยกรรม</span>
-              </li>
-            </ol>
-          </nav>
         </div>
       </section>
-      <section className="intro-section">
-        
-        <div className="container">
-          <h2 className="section-title">เกี่ยวกับบริการ</h2>
-          <div className="intro-content">
-            <p >
-              บริการจัดทำพินัยกรรมอย่างครบวงจรและถูกต้องตามกฎหมาย
-              เพื่อช่วยให้คุณจัดการและวางแผนการส่งต่อทรัพย์สินมรดกได้ตามเจตนารมณ์
-ดูแลทุกขั้นตอนโดยทีมงานผู้เชี่ยวชาญ เพื่อให้พินัยกรรมของคุณมีผลสมบูรณ์
-ช่วยลดความเสี่ยงในการเกิดข้อพิพาทระหว่างทายาทในภายภาคหน้า
-มอบความสบายใจให้คุณได้มั่นใจว่าทุกอย่างจะถูกจัดสรรอย่างเรียบร้อย
+      {/* Breadcrumbs Section - Red Tone */}
+      <Container fluid="md" style={{ marginTop: 0 }}>
+        <Row className="justify-content-center">
+          <Col xs={120} md={110} lg={100} xl={90} xxl={80}>
+            <motion.nav
+              aria-label="breadcrumb"
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, ease: "easeOut" }}
+              style={{ marginBottom: 0 }}
+            >
+              <ol
+                className="breadcrumb"
+                style={{
+                  background: "rgba(255, 255, 255, 1)",
+                  borderRadius: 14,
+                  padding: "12px 24px",
+                  boxShadow: "0 2px 8px rgba(0, 0, 0, 0.1)",
+                  display: "flex",
+                  gap: 8,
+                  fontSize: 16,
+                  fontWeight: 500,
+                  marginBottom: 0,
+                  alignItems: "center",
+                  flexWrap: "wrap",
+                  border: "1px solid #ffffffff",
+                }}
+              >
+                <motion.li
+                  className="breadcrumb-item"
+                  whileHover={{ scale: 1.08, color: "#848484ff" }}
+                  style={{ transition: "0.2s", marginRight: 4 }}
+                >
+                  <a
+                    href="/"
+                    style={{
+                      color: "#848484ff",
+                      textDecoration: "none",
+                      fontWeight: 600,
+                    }}
+                  >
+                    <span style={{ marginRight: 4, fontSize: 18 }}></span>
+                    หน้าแรก
+                  </a>
+                </motion.li>
+                <span
+                  style={{ color: "#848484ff", fontSize: 20, margin: "0 4px" }}
+                >
+                  ›
+                </span>
+                <motion.li
+                  className="breadcrumb-item"
+                  whileHover={{ scale: 1.08, color: "#848484ff" }}
+                  style={{ transition: "0.2s", marginRight: 4 }}
+                >
+                  <a
+                    href="/services"
+                    style={{
+                      color: "#848484ff",
+                      textDecoration: "none",
+                      fontWeight: 600,
+                    }}
+                  >
+                    <span style={{ marginRight: 4, fontSize: 20 }}></span>
+                    บริการของเรา
+                  </a>
+                </motion.li>
+                <span
+                  style={{ color: "#ffb3b3", fontSize: 18, margin: "0 4px" }}
+                >
+                  ›
+                </span>
+                <motion.li
+                  className="breadcrumb-item"
+                  whileHover={{ scale: 1.08, color: "#848484ff" }}
+                  style={{ transition: "0.2s", marginRight: 4 }}
+                >
+                  <a
+                    href="/services"
+                    style={{
+                      color: "#ff7070ff",
+                      textDecoration: "none",
+                      fontWeight: 600,
+                    }}
+                  >
+                    <span style={{ marginRight: 4, fontSize: 20 }}></span>
+                    จัดทำพินัยกรรม
+                  </a>
+                </motion.li>
+              </ol>
+            </motion.nav>
+          </Col>
+        </Row>
+      </Container>
+      <Container fluid="md">
+        <Row className="justify-content-center" style={{ marginTop: 24 }}>
+          <Col xs={120} md={110} lg={100} xl={90} xxl={80}>
+            <motion.div
+              initial={{ opacity: 0, y: 40 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, ease: "easeOut" }}
+            >
+              <Card
+                className="border-0 shadow-sm"
+                style={{ borderRadius: 18, background: "#fff" }}
+              >
+                <Card.Body style={{ padding: 40, marginBottom: 32 }}>
+                  <motion.div
+                    initial={{ opacity: 0, x: -30 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.7, delay: 0.2 }}
+                    className="d-flex align-items-center mb-3"
+                  >
+                    <FaGavel className="me-2" color=" #db3b3bff" size={28} />
+                    <h2
+                      className="fw-bold mb-0"
+                      style={{ fontSize: 28, letterSpacing: 0.5 }}
+                    >
+                      จัดทำพินัยกรรม
+                    </h2>
+                  </motion.div>
+                  <motion.div
+                    initial={{ opacity: 0, scale: 0.95 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 0.7, delay: 0.4 }}
+                    className="mb-4"
+                    style={{
+                      background: "#f3f4f6",
+                      borderRadius: 12,
+                      padding: 20,
+                      marginBottom: 32,
+                    }}
+                  >
+                    <blockquote
+                      className="mb-0"
+                      style={{
+                        fontSize: 16,
+                        color: "#555",
+                        fontStyle: "italic",
+                        borderLeft: "4px solid #db3b3bff",
+                        paddingLeft: 16,
+                      }}
+                    >
+                      "การจัดทำพินัยกรรมเป็นเครื่องมือสำคัญในการวางแผนทรัพย์สินหลังความตาย
+                      เพื่อให้แน่ใจว่าทรัพย์สินของคุณจะถูกจัดการตามความประสงค์ของคุณอย่างถูกต้องและมีประสิทธิภาพ"
+                    </blockquote>
+                  </motion.div>
+                  <motion.p
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.7, delay: 0.6 }}
+                    className="mb-4"
+                    style={{ fontSize: 17, color: "#222", lineHeight: 1.7 }}
+                  >
+                    การจัดทำพินัยกรรมเป็นกระบวนการที่สำคัญในการวางแผนทรัพย์สินหลังความตาย
+                    เพื่อให้แน่ใจว่าทรัพย์สินของคุณจะถูกจัดการตามความประสงค์ของคุณอย่างถูกต้องและมีประสิทธิภาพ
+                    ทีมงานของเรามีความเชี่ยวชาญในการให้คำปรึกษาและจัดทำพินัยกรรมที่เหมาะสมกับความต้องการและสถานการณ์ของแต่ละบุคคล
+                    เราให้บริการที่ครอบคลุมตั้งแต่การให้คำปรึกษาเบื้องต้นเกี่ยวกับกฎหมายพินัยกรรม
+                    การจัดทำพินัยกรรมที่ถูกต้องตามกฎหมาย
+                    ไปจนถึงการให้คำแนะนำในการจัดการทรัพย์สินหลังความตาย
+                    ทีมงานของเรามีประสบการณ์ในการจัดทำพินัยกรรมที่ซับซ้อนและมีความละเอียดอ่อน
+                    เราเข้าใจถึงความสำคัญของการวางแผนทรัพย์สินและมุ่งมั่นที่จะให้บริการที่ดีที่สุดเพื่อให้คุณมั่นใจว่าทรัพย์สินของคุณจะถูกจัดการตามความประสงค์ของคุณอย่างถูกต้อง
+                    และมีประสิทธิภาพ
+                  </motion.p>
+                  <hr className="my-4" style={{ opacity: 0.15 }} />
+                  <motion.div
+                    initial={{ opacity: 0, x: 30 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.7, delay: 0.7 }}
+                    className="mb-4"
+                  >
+                    <h4
+                      className="fw-semibold mb-3 d-flex align-items-center"
+                      style={{ color: "#db3b3bff", fontSize: 20 }}
+                    >
+                      <span className="me-2" role="img" aria-label="service">
+                        📝
+                      </span>{" "}
+                      รูปแบบการให้บริการ
+                    </h4>
+                    <ListGroup variant="flush">
+                      <ListGroup.Item
+                        style={{
+                          background: "none",
+                          border: 0,
+                          paddingLeft: 0,
+                          color: "#444",
+                        }}
+                      >
+                        1.
+                        ดำเนินการตรวจสอบรวบรวมข้อเท็จจริงและเอกสารที่เกี่ยวข้อง
+                      </ListGroup.Item>
+                      <ListGroup.Item
+                        style={{
+                          background: "none",
+                          border: 0,
+                          paddingLeft: 0,
+                          color: "#444",
+                        }}
+                      >
+                        2. ดำเนินการไปพบท่านเพื่อเข้าร่วมประชุมและให้คำปรึกษา
+                      </ListGroup.Item>
+                      <ListGroup.Item
+                        style={{
+                          background: "none",
+                          border: 0,
+                          paddingLeft: 0,
+                          color: "#444",
+                        }}
+                      >
+                        3.
+                        ดำเนินการจัดทำพินัยกรรมและบันทึกข้อตกลงการถือครองและแบ่งทรัพย์สิน
+                      </ListGroup.Item>
+                      <ListGroup.Item
+                        style={{
+                          background: "none",
+                          border: 0,
+                          paddingLeft: 0,
+                          color: "#444",
+                        }}
+                      >
+                        4. ดำเนินการไปพบท่านเพื่อเข้าร่วมประชุมลงนามทำพินัยกรรม,
+                        บันทึกข้อตกลง และร่วมลงนามเป็นพยาน
+                      </ListGroup.Item>
+                    </ListGroup>
+                  </motion.div>
 
-            </p >
-          </div >
-        </div>
-      </section>        
-    
-      {/* Service Types Section */}
-      <section className="service-types">
-        <div className="container">
-          <h2 className="section-title">รูปแบบการให้บริการ</h2>
-          <div className="types-list">
-            <div className="type-item">
-              <div className="type-number">01</div>
-              <div className="type-content">
-                <h3>ดำเนินการตรวจสอบรวบรวมข้อเท็จจริงและเอกสารที่เกี่ยวข้อง</h3>
-                <p>
-                  ดำเนินการตรวจสอบรวบรวมข้อเท็จจริงและเอกสารที่เกี่ยวข้อง เช่น ทรัพย์สินที่ต้องการจัดทำพินัยกรรม, ผู้รับมรดก, และเงื่อนไขพิเศษต่าง ๆ ที่ต้องการระบุในพินัยกรรม
-                </p>
-              </div>
-            </div>
-            <div className="type-item">
-              <div className="type-number">02</div>
-              <div className="type-content">
-                <h3>ดำเนินการไปพบท่านเพื่อเข้าร่วมประชุมและให้คำปรึกษา</h3>
-                <p>
-                  ดำเนินการไปพบท่านเพื่อเข้าร่วมประชุมและให้คำปรึกษาเกี่ยวกับการจัดทำพินัยกรรม รวมถึงการอธิบายเงื่อนไขและข้อกำหนดที่ท่านต้องการระบุในพินัยกรรม
-                </p>
-              </div>
-            </div>
-            <div className="type-item">
-              <div className="type-number">03</div>
-              <div className="type-content">
-                <h3>ดำเนินการจัดทำพินัยกรรมและบันทึกข้อตกลงการถือครองและแบ่งทรัพย์สิน</h3>
-                <p>
-                  ดำเนินการจัดทำพินัยกรรมและบันทึกข้อตกลงการถือครองและแบ่งทรัพย์สินตามที่ท่านได้ระบุไว้ในขั้นตอนก่อนหน้า โดยจะมีการจัดทำเอกสารที่ชัดเจนและถูกต้องตามกฎหมาย
-                </p>
-              </div>
-            </div>
-            <div className="type-item">
-              <div className="type-number">04</div>
-              <div className="type-content">
-                <h3>ดำเนินการไปพบท่านเพื่อเข้าร่วมประชุมลงนามทำพินัยกรรม, บันทึกข้อตกลง และร่วมลงนามเป็นพยาน</h3>
-                <p>
-                  ดำเนินการไปพบท่านเพื่อเข้าร่วมประชุมลงนามทำพินัยกรรม, บันทึกข้อตกลง และร่วมลงนามเป็นพยาน เพื่อให้พินัยกรรมมีผลบังคับตามกฎหมาย
-                </p>
-              </div>
-            </div>
-            
-          </div>
-        </div>
-      </section>
-
-      {/* Pricing Section */}
-      <section className="pricing-section">
-        <div className="container">
-          <h2 className="section-title">อัตราค่าบริการ</h2>
-          <div className="pricing-note">
-            <p style={{ fontSize: '1.3rem' }}>
-              ขึ้นอยู่กับการประมาณการชั่วโมงการทำงาน โดยคิดจากชั่วโมงการทำงานจริง <br />ไม่รวมกับค่าใช้จ่ายเพื่อดำเนินการ
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* Deliverables Section */}
-      {/* <section className="deliverables-section">
-        <div className="container">
-          <h2 className="section-title">สิ่งที่จะได้รับ</h2>
-          <div className="deliverables-grid">
-            <div className="deliverable-card">
-              <div className="deliverable-icon">📄</div>
-              <h3>Disclosure Form</h3>
-              <p>
-                แบบรายงานประจำปีสำหรับบริษัทหรือห้างหุ้นส่วนนิติบุคคลที่มีความสัมพันธ์กันตามมาตรา 71 ทวิ แห่งประมวลรัษฎากร
-              </p>
-            </div>
-            <div className="deliverable-card">
-              <div className="deliverable-icon">📑</div>
-              <h3>Local File</h3>
-              <p>
-                เอกสารหรือหลักฐานแสดงข้อมูลที่จำเป็นสำหรับการวิเคราะห์ข้อกำหนดของธุรกรรมระหว่างกันของบริษัทท่าน
-              </p>
-            </div>
-            <div className="deliverable-card">
-              <div className="deliverable-icon">📋</div>
-              <h3>รายงานผลการตรวจทาน</h3>
-              <p>
-                รายงานผลการตรวจทาน Disclosure Form และ / หรือ Local File พร้อมข้อเสนอแนะเพิ่มเติม
-              </p>
-            </div>
-          </div>
-        </div>
-      </section> */}
-
-      {/* Target Clients Section */}
-      <section className="target-clients-section">
-        <div className="container">
-          <h2 className="section-title">บริการนี้เหมาะสำหรับ</h2>
-          <div className="clients-grid" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-            <div className="client-card single-client-card" style={{ maxWidth: '500px', width: '100%', background: '#fff', borderRadius: '20px', boxShadow: '0 4px 24px rgba(0,0,0,0.08)', padding: '32px 40px', display: 'flex', flexDirection: 'row', alignItems: 'center', gap: '32px' }}>
-              <span className="client-icon" style={{ fontSize: '64px', color: '#5c3d91', minWidth: '64px', textAlign: 'center' }}>👤</span>
-              <div>
-                <h3 style={{ fontSize: '2rem', margin: '0 0 12px 0', color: '#222', fontWeight: 'bold' }}>บุคคลธรรมดา</h3>
-                <p style={{ fontSize: '1.1rem', color: '#444', margin: 0 }}>
-                  ผู้ที่มีทรัพย์สินและต้องการจัดสรรให้เป็นไปตามวัตถุประสงค์ของตนเอง
-                </p>
-              </div>
-              
-            </div>
-            
-          </div>
-        </div>
-      </section>
-
-      {/* Benefits Section */}
-      <section className="benefits-section">
-        <div className="container">
-          <h2 className="section-title">ข้อดีของบริการ</h2>
-          <div className="benefits-grid">
-            <div className="benefit-card">
-              <span className="benefit-number">1.</span>
-              <h3>สะดวกและง่ายสำหรับการจัดการมรดก</h3>
-
-            </div>
-            <div className="benefit-card">
-              <span className="benefit-number">2.</span>
-              <h3>ลดข้อขัดแย้งการแย่งสมบัติในครอบครัว</h3>
-
-            </div>
-            <div className="benefit-card">
-              <span className="benefit-number">3.</span>
-              <h3>สามารถระบุให้กับบุตรหรือภรรยานอกกฎหมายได้</h3>
-
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Required Documents Section */}
-      <section className="required-docs-section">
-        <div className="container">
-          <h2 className="section-title">สิ่งที่ลูกค้าต้องเตรียม</h2>
-          <div className="docs-list">
-            <div className="doc-item">
-              <span className="doc-icon">📊</span>
-              <div className="doc-content">
-                <p>รายละเอียดเกี่ยวกับทรัพย์สิน สินสมรส หนี้สิน</p>
-              </div>
-            </div>
-            <div className="doc-item">
-              <span className="doc-icon">📋</span>
-              <div className="doc-content">
-                <p>ข้อเท็จจริงที่เกิดขึ้นประกอบเอกสารหลักฐาน</p>
-              </div>
-            </div>
-            <div className="doc-item">
-              <span className="doc-icon">💼</span>
-              <div className="doc-content">
-                <p>วัตถุประสงค์ที่แท้จริง</p>
-              </div>
-            </div>
-            
-          </div>
-        </div>
-      </section>
-<p style={{ borderBottom: '1px solid #979797ff' }}></p>          
-
-      {/* Other Services Section */}
-      <section className="contact-section">
-        <div className="container">
-          <h2 className="section-title">บริการอื่นๆ</h2>
-          <div className="contact-grid">
-            <div className="contact-card">
-              <div className="contact-icon">⚖️</div>
-              <h3>กฎหมายธุรกิจ</h3>
-              <p>ให้คำปรึกษาด้านกฎหมายธุรกิจ</p>
-              <button className="service-button" onClick={() => window.location.href='/services/legal/business-law'}>ดูรายละเอียด</button>
-            </div>
-            <div className="contact-card">
-              <div className="contact-icon">🏛️</div>
-              <h3>คดีความ</h3>
-              <p>รับดำเนินคดีความทุกประเภท</p>
-              <button className="service-button" onClick={() => window.location.href='/services/legal/litigation'}>ดูรายละเอียด</button>
-            </div>
-            <div className="contact-card">
-              <div className="contact-icon">�</div>
-              <h3>กฎหมายภาษี</h3>
-              <p>ให้คำปรึกษาด้านกฎหมายภาษี</p>
-              <button className="service-button" onClick={() => window.location.href='/services/legal/tax-law'}>ดูรายละเอียด</button>
-            </div>
-            <div className="contact-card">
-              <div className="contact-icon">�</div>
-              <h3>Transfer Pricing</h3>
-              <p>บริการ Transfer Pricing ครบวงจร</p>
-              <button className="service-button" onClick={() => window.location.href='/services/legal/transfer-pricing'}>ดูรายละเอียด</button>
-            </div>
-          </div>
-          
-
-        </div>
-      </section>
+                  <motion.div
+                    initial={{ opacity: 0, x: 30 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.7, delay: 0 }}
+                    className="mb-4"
+                  >
+                    <h4
+                      className="fw-semibold mb-3 d-flex align-items-center"
+                      style={{ color: "#db3b3bff", fontSize: 20 }}
+                    >
+                      <span className="me-2" role="img" aria-label="price">
+                        👤
+                      </span>{" "}
+                      บริการนี้เหมาะสำหรับ
+                    </h4>
+                    <ListGroup variant="flush">
+                      <ListGroup.Item
+                        style={{
+                          background: "none",
+                          border: 0,
+                          paddingLeft: 0,
+                          color: "#444",
+                        }}
+                      >
+                        <span>
+                          1.
+                          บุคคลธรรมดาที่มีทรัพย์สินและต้องการจัดสรรให้เป็นไปตามวัตถุประสงค์ของเจ้าของทรัพย์สิน
+                        </span>
+                      </ListGroup.Item>
+                    </ListGroup>
+                  </motion.div>
+                  <motion.div
+                    initial={{ opacity: 0, x: 30 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.7, delay: 0 }}
+                    className="mb-4"
+                  >
+                    <h4
+                      className="fw-semibold mb-3 d-flex align-items-center"
+                      style={{ color: "#db3b3bff", fontSize: 20 }}
+                    >
+                      <span className="me-2" role="img" aria-label="price">
+                        ✅
+                      </span>{" "}
+                      ข้อดี
+                    </h4>
+                    <ListGroup variant="flush">
+                      <ListGroup.Item
+                        style={{
+                          background: "none",
+                          border: 0,
+                          paddingLeft: 0,
+                          color: "#444",
+                        }}
+                      >
+                        <span>1. สะดวกและง่ายสำหรับการจัดการมรดก</span>
+                      </ListGroup.Item>
+                      <ListGroup.Item
+                        style={{
+                          background: "none",
+                          border: 0,
+                          paddingLeft: 0,
+                          color: "#444",
+                        }}
+                      >
+                        <span>2. ลดข้อขัดแย้งในครอบครัว</span>
+                      </ListGroup.Item>
+                      <ListGroup.Item
+                        style={{
+                          background: "none",
+                          border: 0,
+                          paddingLeft: 0,
+                          color: "#444",
+                        }}
+                      >
+                        <span>
+                          3. สามารถระบุให้กับบุตรหรือภรรยานอกกฎหมายได้
+                        </span>
+                      </ListGroup.Item>
+                    </ListGroup>
+                  </motion.div>
+                  <motion.div
+                    initial={{ opacity: 0, x: 30 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.7, delay: 0 }}
+                    className="mb-4"
+                  >
+                    <h4
+                      className="fw-semibold mb-3 d-flex align-items-center"
+                      style={{ color: "#db3b3bff", fontSize: 20 }}
+                    >
+                      <span className="me-2" role="img" aria-label="price">
+                        📦
+                      </span>{" "}
+                      สิ่งที่ลูกค้าต้องเตรียม
+                    </h4>
+                    <ListGroup variant="flush">
+                      <ListGroup.Item
+                        style={{
+                          background: "none",
+                          border: 0,
+                          paddingLeft: 0,
+                          color: "#444",
+                        }}
+                      >
+                        <span>
+                          1. รายละเอียดเกี่ยวกับทรัพย์สิน สินสมรส หนี้สิน
+                        </span>
+                      </ListGroup.Item>
+                      <ListGroup.Item
+                        style={{
+                          background: "none",
+                          border: 0,
+                          paddingLeft: 0,
+                          color: "#444",
+                        }}
+                      >
+                        <span>
+                          2. ข้อเท็จจริงที่เกิดขึ้นประกอบเอกสารหลักฐาน
+                        </span>
+                      </ListGroup.Item>
+                      <ListGroup.Item
+                        style={{
+                          background: "none",
+                          border: 0,
+                          paddingLeft: 0,
+                          color: "#444",
+                        }}
+                      >
+                        <span>3. วัตถุประสงค์ที่แท้จริง</span>
+                      </ListGroup.Item>
+                    </ListGroup>
+                  </motion.div>
+                  <motion.div
+                    initial={{ opacity: 0, x: 30 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.7, delay: 0 }}
+                    className="mb-4"
+                  >
+                    <h4
+                      className="fw-semibold mb-3 d-flex align-items-center"
+                      style={{ color: "#db3b3bff", fontSize: 20 }}
+                    >
+                      <span className="me-2" role="img" aria-label="price">
+                        💸
+                      </span>{" "}
+                      อัตราค่าบริการ
+                    </h4>
+                    <ListGroup variant="flush">
+                      <ListGroup.Item
+                        style={{
+                          background: "none",
+                          border: 0,
+                          paddingLeft: 0,
+                          color: "#444",
+                        }}
+                      >
+                        <span className="fw-bold">
+                          ขึ้นอยู่กับการประมาณการชั่วโมงการทำงาน
+                          โดยคิดจากชั่วโมงการทำงานจริงไม่รวมกับค่าใช้จ่ายเพื่อดำเนินการ
+                        </span>
+                      </ListGroup.Item>
+                    </ListGroup>
+                  </motion.div>
+                  <motion.div
+                    initial={{ opacity: 0, x: 30 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.7, delay: 0 }}
+                  >
+                    <hr
+                      style={{
+                        border: "none",
+                        borderTop: "2px solid #e0e0e0",
+                        margin: "32px 0 24px 0",
+                        marginBottom: "32px",
+                        opacity: 0.7,
+                      }}
+                    />
+                    <h4
+                      className="fw-semibold mb-3 d-flex align-items-center"
+                      style={{ color: "#db3b3bff", fontSize: 20 }}
+                    >
+                      <span className="me-2" role="img" aria-label="related">
+                        🔗
+                      </span>{" "}
+                      บริการอื่นๆ
+                    </h4>
+                    <Row xs={1} md={3} className="g-3">
+                      <Col>
+                        <Card
+                          className="h-100 shadow-sm"
+                          style={{
+                            borderRadius: 14,
+                            background: "#f3f4f6",
+                            border: "none",
+                          }}
+                        >
+                          <Card.Body>
+                            <Card.Title
+                              style={{
+                                color: "#db3b3bff",
+                                fontWeight: 600,
+                                fontSize: 18,
+                              }}
+                            >
+                              งานกฎหมายภาษีอากร
+                            </Card.Title>
+                            <Card.Text style={{ color: "#444", fontSize: 15 }}>
+                              ให้คำปรึกษาและดำเนินการเกี่ยวกับกฎหมายภาษีอากรทุกประเภท
+                            </Card.Text>
+                          </Card.Body>
+                        </Card>
+                      </Col>
+                      <Col>
+                        <Card
+                          className="h-100 shadow-sm"
+                          style={{
+                            borderRadius: 14,
+                            background: "#f3f4f6",
+                            border: "none",
+                          }}
+                        >
+                          <Card.Body>
+                            <Card.Title
+                              style={{
+                                color: "#db3b3bff",
+                                fontWeight: 600,
+                                fontSize: 18,
+                              }}
+                            >
+                              งานอรรถคดีและบังคับคดี
+                            </Card.Title>
+                            <Card.Text style={{ color: "#444", fontSize: 15 }}>
+                              รับดำเนินคดีและบังคับคดีในทุกขั้นตอนอย่างมืออาชีพ
+                            </Card.Text>
+                          </Card.Body>
+                        </Card>
+                      </Col>
+                      <Col>
+                        <Card
+                          className="h-100 shadow-sm"
+                          style={{
+                            borderRadius: 14,
+                            background: "#f3f4f6",
+                            border: "none",
+                          }}
+                        >
+                          <Card.Body>
+                            <Card.Title
+                              style={{
+                                color: "#db3b3bff",
+                                fontWeight: 600,
+                                fontSize: 18,
+                              }}
+                            >
+                              งานกฎหมายอื่น ๆ ที่เกี่ยวกับการค้าและบุคคล
+                            </Card.Title>
+                            <Card.Text style={{ color: "#444", fontSize: 15 }}>
+                              ครอบคลุมงานกฎหมายที่เกี่ยวข้องกับการค้าและบุคคลทุกประเภท
+                            </Card.Text>
+                          </Card.Body>
+                        </Card>
+                      </Col>
+                    </Row>
+                  </motion.div>
+                </Card.Body>
+              </Card>
+            </motion.div>
+          </Col>
+        </Row>
+      </Container>
     </div>
   );
 }
