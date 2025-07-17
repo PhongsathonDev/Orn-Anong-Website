@@ -90,8 +90,14 @@ function HomePage() {
       {/* ส่วน hero พร้อมพื้นหลัง */}
       <div className="hero-wrapper ">
         <div
-          className="container mt-5"
-          style={{ paddingTop: "200px", paddingBottom: "180px", maxWidth: "1200px" }}
+          className="container mt-5 d-flex justify-content-center align-items-center"
+          style={{
+            width: "100%",
+            minHeight: "80vh",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center"
+          }}
         >
           <motion.div
             className="row align-items-center"
@@ -100,7 +106,7 @@ function HomePage() {
             transition={{ duration: 1.2 }}
           >
             <div className="col-lg-8 mx-auto text-center">
-              <main>
+              <main style={{  }}>
                 <Main />
               </main>
 
@@ -133,8 +139,8 @@ function HomePage() {
                       minWidth: "200px",
                       height: "55px",
                       background: "transparent",
-                      border: "2px solid #3b82f6",
-                      color: "#3b82f6",
+                      border: "2px solid #f45555ff",
+                      color: "#f56565ff",
                       padding: "12px 32px",
                       borderRadius: "8px",
                       fontWeight: "600",
@@ -144,13 +150,13 @@ function HomePage() {
                       marginTop: "20px",
                     }}
                     onMouseEnter={(e) => {
-                      e.target.style.background = "#3b82f6";
+                      e.target.style.background = "#f76363ff";
                       e.target.style.color = "#ffffff";
                       e.target.style.transform = "translateY(-2px)";
                     }}
                     onMouseLeave={(e) => {
                       e.target.style.background = "transparent";
-                      e.target.style.color = "#3b82f6";
+                      e.target.style.color = "#f45d5dff";
                       e.target.style.transform = "translateY(0)";
                     }}
                   >
@@ -173,9 +179,24 @@ function HomePage() {
         style={{
           paddingTop: "120px",
           paddingBottom: "80px",
-          background: "linear-gradient(135deg, #f8fafc 0%, #ffffff 50%, #f1f5f9 100%)",
+          background: `linear-gradient(135deg, #f8fafc 0%, #ffffff 50%, #f1f5f9 100%)`,
         }}
       >
+        {/* Background image for 'เกี่ยวกับเรา' section */}
+        <div
+          style={{
+            position: "absolute",
+            inset: 0,
+            width: "100%",
+            height: "100%",
+            // backgroundImage: "url('https://images.vexels.com/content/143715/preview/colorful-abstract-background-with-rounded-shapes-620d05.png')",
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            opacity: 0.5,
+            zIndex: 0,
+            pointerEvents: "none",
+          }}
+        ></div>
         {/* Background decorative elements */}
         <div
           style={{
@@ -188,6 +209,7 @@ function HomePage() {
               "linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(147, 51, 234, 0.1))",
             borderRadius: "50%",
             filter: "blur(40px)",
+            zIndex: 1,
           }}
         ></div>
         <div
@@ -201,6 +223,7 @@ function HomePage() {
               "linear-gradient(135deg, rgba(16, 185, 129, 0.1), rgba(59, 130, 246, 0.1))",
             borderRadius: "50%",
             filter: "blur(40px)",
+            zIndex: 1,
           }}
         ></div>
 
@@ -217,7 +240,7 @@ function HomePage() {
               className="display-4 fw-bold mb-3"
               style={{
                 fontFamily: "Prompt, sans-serif",
-                background: "linear-gradient(135deg, #3b82f6 0%, #8b5cf6 50%, #06b6d4 100%)",
+                background: "#322a57ff",
                 WebkitBackgroundClip: "text",
                 WebkitTextFillColor: "transparent",
                 backgroundClip: "text",
@@ -233,7 +256,7 @@ function HomePage() {
               className="mx-auto mb-4"
               style={{
                 height: "4px",
-                background: "linear-gradient(90deg, #3b82f6, #8b5cf6)",
+                background: "#ff5d5dff",
                 borderRadius: "2px",
               }}
             />
@@ -303,7 +326,7 @@ function HomePage() {
                     </p>
 
                     {/* Achievement Stats */}
-                    <div className="row g-3 mb-4">
+                    <div className="row g-3 mb-4" style={{ fontFamily: "Prompt, sans-serif" }}>
                       <div className="col-sm-6">
                         <div className="d-flex align-items-center p-3 bg-light rounded-3">
                           <div className="bg-primary text-white rounded-circle d-flex align-items-center justify-content-center me-3" style={{ width: "50px", height: "50px" }}>
@@ -395,17 +418,17 @@ function HomePage() {
         </div>
       </section>
       {/* ใบรับรอง */}
-      <div
+
+      <section
         id="about-duplicate"
+        className="position-relative overflow-hidden"
         style={{
-          paddingTop: "120px",
-          paddingBottom: "60px",
-          background:
-            "linear-gradient(135deg, #f8fafc 0%, #ffffff 50%, #f1f5f9 100%)",
-          position: "relative",
-          overflow: "hidden",
+          paddingTop: "160px",
+          paddingBottom: "120px",
+          background: "linear-gradient(135deg, #f8fafc 0%, #ffffff 50%, #f1f5f9 100%)",
         }}
       >
+        {/* Background decorative elements */}
         <div
           style={{
             position: "absolute",
@@ -417,6 +440,7 @@ function HomePage() {
               "linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(147, 51, 234, 0.1))",
             borderRadius: "50%",
             filter: "blur(40px)",
+            zIndex: 1,
           }}
         ></div>
         <div
@@ -430,6 +454,7 @@ function HomePage() {
               "linear-gradient(135deg, rgba(16, 185, 129, 0.1), rgba(59, 130, 246, 0.1))",
             borderRadius: "50%",
             filter: "blur(40px)",
+            zIndex: 1,
           }}
         ></div>
 
@@ -437,167 +462,93 @@ function HomePage() {
           <div className="text-center mb-5">
             <h2
               style={{
-                fontSize: "2.8rem",
-                fontWeight: "800",
+                fontSize: "3.5rem",
+                fontWeight: "900",
                 fontFamily: "Prompt, sans-serif",
-                background:
-                  "linear-gradient(135deg, #3b82f6 0%, #8b5cf6 50%, #06b6d4 100%)",
+                background: "#322a57ff",
                 WebkitBackgroundClip: "text",
                 WebkitTextFillColor: "transparent",
                 backgroundClip: "text",
-                marginBottom: "1rem",
+                marginBottom: "1.5rem",
+                letterSpacing: "2px",
               }}
             >
               ใบรับรอง
             </h2>
-            <div
+            <motion.div
+              initial={{ width: 0 }}
+              whileInView={{ width: "120px" }}
+              transition={{ duration: 1, delay: 0.5 }}
+              viewport={{ once: true }}
+              className="mx-auto mb-4"
               style={{
                 height: "4px",
-                background: "linear-gradient(90deg, #3b82f6, #8b5cf6)",
-                margin: "0 auto",
+                background: "#ff5d5dff",
                 borderRadius: "2px",
-                width: "120px",
               }}
-            ></div>
+            />
+            <p className="lead text-muted mt-3" style={{ fontFamily: "Prompt, sans-serif", maxWidth: "600px", margin: "0 auto" }}>
+              ตัวอย่างใบรับรองและรางวัลที่สำนักงานได้รับ
+            </p>
+            <motion.div />
           </div>
 
-          <div className="row align-items-center mb-5">
-            <div className="col-lg-6 mb-4">
-              <div style={{ position: "relative" }}>
-                <img
-                  src="https://png.pngtree.com/png-clipart/20250513/original/pngtree-certificate-design-vector-png-image_20949637.png"
-                  alt="เกี่ยวกับเรา"
-                  className="img-fluid rounded-4 shadow-lg"
-                  style={{
-                    width: "100%",
-                    height: "320px",
-                    objectFit: "cover",
-                    border: "4px solid rgba(59, 130, 246, 0.1)",
-                  }}
-                />
-                ใบรับรอง
-                <div
-                  style={{
-                    position: "absolute",
-                    top: "-10px",
-                    left: "-10px",
-                    right: "10px",
-                    bottom: "10px",
-                    background:
-                      "linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(139, 92, 246, 0.1))",
-                    borderRadius: "20px",
-                    zIndex: -1,
-                  }}
+          {/* Card Gallery for Certificates */}
+          <div className="row justify-content-center g-4 mb-5">
+            {[
+              {
+                img: "https://png.pngtree.com/png-clipart/20250513/original/pngtree-certificate-design-vector-png-image_20949637.png",
+                title: "ใบรับรองคุณภาพงานบัญชี",
+                desc: "ได้รับการรับรองจากหน่วยงานราชการและสมาคมวิชาชีพ",
+              },
+              {
+                img: "https://png.pngtree.com/png-clipart/20250513/original/pngtree-certificate-design-vector-png-image_20949637.png",
+                title: "รางวัลสำนักงานดีเด่น",
+                desc: "รางวัลแห่งความสำเร็จและความไว้วางใจจากลูกค้า",
+              },
+              {
+                img: "https://png.pngtree.com/png-clipart/20250513/original/pngtree-certificate-design-vector-png-image_20949637.png",
+                title: "CPA Certified",
+                desc: "ทีมงานผู้สอบบัญชีรับอนุญาต (CPA) ครบถ้วน",
+              },
+              {
+                img: "https://png.pngtree.com/png-clipart/20250513/original/pngtree-certificate-design-vector-png-image_20949637.png",
+                title: "สมาชิกสมาคมวิชาชีพ",
+                desc: "เป็นสมาชิกสมาคมผู้สอบบัญชีและที่ปรึกษาภาษี",
+              },
+            ].map((item, i) => (
+              <motion.div
+                className="col-12 col-md-6 col-lg-6"
+                key={i}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: i * 0.2, duration: 0.8 }}
+                viewport={{ once: true }}
+              >
+                <motion.div
+                  whileHover={{ scale: 1.07, boxShadow: "0 12px 40px rgba(59,130,246,0.16)" }}
+                  transition={{ duration: 0.3 }}
+                  className="card border-0 shadow-lg h-100 text-center"
+                  style={{ borderTop: "7px solid #3b82f6", borderRadius: "28px", minHeight: "420px" }}
                 >
-                  
-                </div>
-                
-              </div>
-            </div>
-            <div className="col-lg-6 mb-4">
-              <div style={{ position: "relative" }}>
-                <img
-                  src="https://png.pngtree.com/png-clipart/20250513/original/pngtree-certificate-design-vector-png-image_20949637.png"
-                  alt="เกี่ยวกับเรา"
-                  className="img-fluid rounded-4 shadow-lg"
-                  style={{
-                    width: "100%",
-                    height: "320px",
-                    objectFit: "cover",
-                    border: "4px solid rgba(59, 130, 246, 0.1)",
-                  }}
-                />
-                ใบรับรอง
-                <div
-                  style={{
-                    position: "absolute",
-                    top: "-10px",
-                    left: "-10px",
-                    right: "10px",
-                    bottom: "10px",
-                    background:
-                      "linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(139, 92, 246, 0.1))",
-                    borderRadius: "20px",
-                    zIndex: -1,
-                  }}
-                >
-                </div>
-                
-              </div>
-            </div>
-            <div className="col-lg-6 mb-4">
-              <div style={{ position: "relative" }}>
-                <img
-                  src="https://png.pngtree.com/png-clipart/20250513/original/pngtree-certificate-design-vector-png-image_20949637.png"
-                  alt="เกี่ยวกับเรา"
-                  className="img-fluid rounded-4 shadow-lg"
-                  style={{
-                    width: "100%",
-                    height: "320px",
-                    objectFit: "cover",
-                    border: "4px solid rgba(59, 130, 246, 0.1)",
-                  }}
-                />
-                ใบรับรอง
-                <div
-                  style={{
-                    position: "absolute",
-                    top: "-10px",
-                    left: "-10px",
-                    right: "10px",
-                    bottom: "10px",
-                    background:
-                      "linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(139, 92, 246, 0.1))",
-                    borderRadius: "20px",
-                    zIndex: -1,
-                  }}
-                >
-                  
-                </div>
-                
-              </div>
-            </div>
-            <div className="col-lg-6 mb-4">
-              <div style={{ position: "relative" }}>
-                <img
-                  src="https://png.pngtree.com/png-clipart/20250513/original/pngtree-certificate-design-vector-png-image_20949637.png"
-                  alt="เกี่ยวกับเรา"
-                  className="img-fluid rounded-4 shadow-lg"
-                  style={{
-                    width: "100%",
-                    height: "320px",
-                    objectFit: "cover",
-                    border: "4px solid rgba(59, 130, 246, 0.1)",
-                  }}
-                />
-                ใบรับรอง
-                <div
-                  style={{
-                    position: "absolute",
-                    top: "-10px",
-                    left: "-10px",
-                    right: "10px",
-                    bottom: "10px",
-                    background:
-                      "linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(139, 92, 246, 0.1))",
-                    borderRadius: "20px",
-                    zIndex: -1,
-                  }}
-                >
-                  
-                </div>
-                
-              </div>
-            </div>
-            
-
-          
-          
-
-
+                  <div className="position-relative">
+                    <img
+                      src={item.img}
+                      alt={item.title}
+                      className="img-fluid rounded-4 mt-4 mb-3"
+                      style={{ width: "96%", height: "260px", objectFit: "cover", border: "4px solid rgba(59,130,246,0.16)" }}
+                    />
+                  </div>
+                  <div className="card-body pb-4">
+                    <h5 className="card-title fw-bold mb-3" style={{ fontFamily: "Prompt, sans-serif", color: "#3b82f6", fontSize: "1.45rem" }}>{item.title}</h5>
+                    <p className="card-text text-muted" style={{ fontFamily: "Prompt, sans-serif", fontSize: "1.15rem" }}>{item.desc}</p>
+                  </div>
+                </motion.div>
+              </motion.div>
+            ))}
           </div>
         </div>
-      </div>              
+      </section>
       {/* บริการของเรา */}
       <div id="our-services" style={{ scrollMarginTop: "50px" }}>
         <OurServicesSection />
@@ -769,6 +720,7 @@ function HomePage() {
           >
             ติดต่อเรา
           </motion.h2>
+          
           <div className="row justify-content-center">
             <div className="col-lg-10">
               <motion.div

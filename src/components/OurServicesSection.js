@@ -1,4 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
+import { motion } from 'framer-motion';
 
 function MostPopularCourses() {
   const [activeTab, setActiveTab] = useState('ด้านกฎหมาย');
@@ -441,7 +442,7 @@ function MostPopularCourses() {
   };
 
   return (
-    <div style={{ background: '#f8f9fa', padding: '80px 0', fontFamily: 'Prompt, sans-serif' }}>
+    <div style={{ background: '#f8f8faff', padding: '80px 0', fontFamily: 'Prompt, sans-serif' }}>
       <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 16px' }}>
         {/* Header */}
         <div style={{ textAlign: 'center', marginBottom: '60px' }}>
@@ -454,6 +455,18 @@ function MostPopularCourses() {
           }}>
             บริการของเรา
           </h2>
+          <motion.div
+              initial={{ width: 0 }}
+              whileInView={{ width: "120px" }}
+              transition={{ duration: 1, delay: 0.5 }}
+              viewport={{ once: true }}
+              className="mx-auto mb-4"
+              style={{
+                height: "4px",
+                background: "#ff5d5dff",
+                borderRadius: "2px",
+              }}
+            />
           <p style={{
             fontSize: '1.1rem',
             color: '#6c6f7dff',
@@ -461,6 +474,7 @@ function MostPopularCourses() {
           }}>
             บริการของเราได้รับการออกแบบมาเพื่อช่วยให้คุณประสบความสำเร็จในทุกด้านของธุรกิจและการเงิน
           </p>
+          <motion.div />
         </div>
 
         {/* Tab Navigation */}
@@ -640,13 +654,13 @@ function MostPopularCourses() {
                   }}>
                     {course.description}
                   </p>
-                  {/* <div style={{
+                  <div style={{
                     display: 'flex',
                     alignItems: 'center',
                     gap: '8px',
                     marginBottom: '16px'
                   }}>
-                    <div style={{ color: '#ffc107' }}>
+                    {/* <div style={{ color: '#ffc107' }}>
                       {'★'.repeat(Math.floor(course.rating))}
                       {course.rating % 1 !== 0 && '☆'}
                     </div>
@@ -667,8 +681,8 @@ function MostPopularCourses() {
                     <div style={{ display: 'flex', alignItems: 'center', gap: '4px' }}>
                       <span style={{ color: '#fd7e14' }}>📚</span>
                       {course.lectures} lectures
-                    </div>
-                  </div> */}
+                    </div> */}
+                  </div>
                 </div>
               </div>
             </a>

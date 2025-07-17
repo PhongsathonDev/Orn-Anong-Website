@@ -93,8 +93,8 @@ body {
   font-weight: 600;
   text-transform: uppercase;
   transition: all 0.3s ease;
-  background: linear-gradient(135deg, #3b82f6, #1d4ed8);
-  box-shadow: 0 4px 15px rgba(59, 130, 246, 0.4);
+  background: linear-gradient(135deg, #ef6666, #da3e3e);
+  box-shadow: 0 4px 15px rgba(246, 59, 59, 0.4);
   position: relative;
   overflow: hidden;
 }
@@ -116,7 +116,7 @@ body {
 
 .shadow__btn:hover {
   transform: translateY(-2px);
-  box-shadow: 0 6px 25px rgba(59, 130, 246, 0.6);
+  box-shadow: 0 6px 25px rgba(246, 59, 59, 0.6);
 }
 
 

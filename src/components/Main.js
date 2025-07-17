@@ -9,10 +9,10 @@ function Main() {
         เราจัดการเรื่องบัญชีและภาษีของท่านด้วย
         <span className="animated-underline">
           <ReactTyped
-            strings={["ความแม่นยำ", "ความเชี่ยวชาญ", "ความโปร่งใส", "ความใส่ใจ"]}
-            typeSpeed={100}
+            strings={["ความใส่ใจ", "ความเชี่ยวชาญ", "ความโปร่งใส"]}
+            typeSpeed={80}
             backSpeed={50}
-            backDelay={1200}
+            backDelay={2000}
             loop
           />
         </span>

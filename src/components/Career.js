@@ -124,9 +124,9 @@ const courseData = [
 
 const categories = [
   "All Categories",
-  "Design",
-  "Javascript",
-  "Web Development",
+  "IT & Software",
+  "Accounting",
+  "Data Engineering",
 ];
 
 function Career() {

@@ -109,12 +109,12 @@ function ContactWidget() {
           height: "60px",
           borderRadius: "50%",
           background:
-            "linear-gradient(135deg, #667eea 0%,rgb(94, 75, 162) 100%)",
+            "linear-gradient(135deg, #ea6666ff 0%,rgba(162, 75, 75, 1) 100%)",
           border: "none",
           color: "white",
           fontSize: "24px",
           cursor: "pointer",
-          boxShadow: "0 6px 20px rgba(102, 126, 234, 0.4)",
+          boxShadow: "0 6px 20px rgba(234, 102, 102, 0.4)",
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
@@ -122,11 +122,11 @@ function ContactWidget() {
         }}
         onMouseEnter={(e) => {
           e.target.style.transform = "scale(1.1)";
-          e.target.style.boxShadow = "0 8px 25px rgba(102, 126, 234, 0.6)";
+          e.target.style.boxShadow = "0 8px 25px rgba(234, 102, 102, 0.6)";
         }}
         onMouseLeave={(e) => {
           e.target.style.transform = "scale(1)";
-          e.target.style.boxShadow = "0 6px 20px rgba(102, 126, 234, 0.4)";
+          e.target.style.boxShadow = "0 6px 20px rgba(234, 102, 102, 0.4)";
         }}
       >
         {showContactWidget ? "✕" : "💭"}

@@ -8,11 +8,16 @@ const NavbarMain = () => {
   const hideDropdownTimeout = useRef(null);
   const [isScrolled, setIsScrolled] = useState(false); // เพิ่ม state สำหรับ navigation scroll
 
-  // เพิ่ม useEffect สำหรับตรวจจับการ scroll
+  // เพิ่ม useEffect สำหรับตรวจจับการ scroll และเช็ค pathname
   React.useEffect(() => {
+    const isHomePage = window.location.pathname === "/" || window.location.pathname === "/home";
+    if (!isHomePage) {
+      setIsScrolled(true);
+      return;
+    }
     const handleScroll = () => {
       const scrollTop = window.scrollY;
-      setIsScrolled(scrollTop > 100); // เปลี่ยนสไตล์เมื่อ scroll ลงมา 100px
+      setIsScrolled(scrollTop > 100);
     };
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
@@ -59,13 +64,13 @@ const NavbarMain = () => {
       zIndex: 1000,
       padding: isScrolled ? "10px 20px" : "20px 20px",
       background: isScrolled 
-        ? "rgba(255, 255, 255, 0.7)" 
+        ? "rgba(255, 255, 255, 0.9)" 
         : "transparent",
       backdropFilter: isScrolled ? "blur(50px)" : "none",
       borderBottom: isScrolled 
         ? "1px solid rgba(0, 0, 0, 0.1)" 
         : "none",
-      transition: "all 0.3s ease",
+      transition: "all 0.5s ease",
       boxShadow: isScrolled 
         ? "0 2px 20px rgba(0, 0, 0, 0.1)" 
         : "none"
@@ -76,8 +81,8 @@ const NavbarMain = () => {
         <img
           src={logoImage}
           alt="Logo"
-          width={isScrolled ? "60" : "75"}
-          height={isScrolled ? "60" : "75"}
+          width={isScrolled ? "50" : "75"}
+          height={isScrolled ? "50" : "75"}
           className="me-2"
           style={{ 
             borderRadius: "50%",
@@ -88,7 +93,7 @@ const NavbarMain = () => {
           className="fw-bold"
           style={{ 
             fontFamily: "Prompt, sans-serif",
-            fontSize: isScrolled ? "1.2rem" : "1.5rem", // ปรับขนาดตาม scroll
+            fontSize: isScrolled ? "1.1rem" : "1.5rem", // ปรับขนาดตาม scroll
             color: isScrolled ? " #1e293b" : "rgb(0, 0, 0)",
             transition: "all 0.3s ease",
             whiteSpace: "nowrap" // ป้องกันชื่อขึ้นบรรทัดใหม่
@@ -105,7 +110,7 @@ const NavbarMain = () => {
           className="nav-item"
           style={{
             color: isScrolled ? " #1e293b" : "rgb(0, 0, 0)",
-            fontSize: isScrolled ? "1.2rem" : "1.4rem",
+            fontSize: isScrolled ? "1.1rem" : "1.4rem",
             transition: "all 0.3s ease",
           }}
         >
@@ -121,7 +126,7 @@ const NavbarMain = () => {
           className="nav-item"
           style={{
             color: isScrolled ? " #1e293b" : "rgb(0, 0, 0)",
-            fontSize: isScrolled ? "1.2rem" : "1.4rem",
+            fontSize: isScrolled ? "1.1rem" : "1.4rem",
             transition: "all 0.3s ease",
           }}
         >
@@ -132,6 +137,7 @@ const NavbarMain = () => {
         backgroundColor: isScrolled ? "rgb(115, 118, 122)" : "rgba(0, 0, 0, 0.5)",
         transition: "all 0.3s ease"
       }} />
+      
       
       <div 
         className="services-dropdown-container"
@@ -144,7 +150,7 @@ const NavbarMain = () => {
             className="nav-item"
             style={{
               color: isScrolled ? " #1e293b" : "rgb(0, 0, 0)",
-              fontSize: isScrolled ? "1.2rem" : "1.4rem",
+              fontSize: isScrolled ? "1.1rem" : "1.4rem",
               transition: "all 0.3s ease",
               display: "flex",
               alignItems: "center",
@@ -161,10 +167,11 @@ const NavbarMain = () => {
                 color: showServicesDropdown ? "#3b82f6" : "#64748b"
               }}
             >
-              ▼
+              
             </span>
           </span>
         </a>
+        
         {showServicesDropdown && (
           <div
             className="services-dropdown"
@@ -265,6 +272,7 @@ const NavbarMain = () => {
                       fontSize: "14px",
                       lineHeight: "1.6"
                     }}>
+                      <a href="/services/business-law" style={{ color: "inherit", textDecoration: "none", display: "block" }}>
                       <li style={{ 
                         marginBottom: "10px", 
                         color: "#64748b", 
@@ -284,8 +292,12 @@ const NavbarMain = () => {
                             e.target.style.borderLeftColor = "transparent";
                             e.target.style.color = "#64748b";
                           }}>
-                        • งานกฎหมายธุรกิจ
+                        
+                          • งานกฎหมายธุรกิจ
+                        
                       </li>
+                      </a>
+                      <a href="/services/tax-law" style={{ color: "inherit", textDecoration: "none", display: "block" }}>
                       <li style={{ 
                         marginBottom: "10px", 
                         color: "#64748b", 
@@ -307,6 +319,8 @@ const NavbarMain = () => {
                           }}>
                         • งานกฎหมายภาษีอากร
                       </li>
+                      </a>
+                      <a href="/services/litigation" style={{ color: "inherit", textDecoration: "none", display: "block" }}>
                       <li style={{ 
                         marginBottom: "10px", 
                         color: "#64748b", 
@@ -328,6 +342,8 @@ const NavbarMain = () => {
                           }}>
                         • งานอรรถคดีและบังคับคดี
                       </li>
+                      </a>
+                      <a href="/services/other-law" style={{ color: "inherit", textDecoration: "none", display: "block" }}>
                       <li style={{ 
                         marginBottom: "10px", 
                         color: "#64748b", 
@@ -349,6 +365,8 @@ const NavbarMain = () => {
                           }}>
                         • งานกฎหมายอื่น ๆ ที่เกี่ยวกับการค้าและบุคคล
                       </li>
+                      </a>
+                      <a href="/services/transfer-pricing" style={{ color: "inherit", textDecoration: "none", display: "block" }}>
                       <li style={{ 
                         marginBottom: "10px", 
                         color: "#64748b", 
@@ -370,6 +388,8 @@ const NavbarMain = () => {
                           }}>
                         • งาน Transfer Pricing
                       </li>
+                      </a>
+                      <a href="/services/testament" style={{ color: "inherit", textDecoration: "none", display: "block" }}>
                       <li style={{ 
                         marginBottom: "10px", 
                         color: "#64748b", 
@@ -391,6 +411,7 @@ const NavbarMain = () => {
                           }}>
                         • บริการจัดทำพินัยกรรม
                       </li>
+                      </a>
                       <li style={{ 
                         marginBottom: "10px", 
                         color: "#64748b", 
@@ -882,8 +903,25 @@ const NavbarMain = () => {
           </div>
         )}
       </div>
+      
       <div className="divider" style={{
         backgroundColor: isScrolled ? " rgb(115, 118, 122)" : "rgba(0, 0, 0, 0.5)",
+        transition: "all 0.3s ease"
+      }} />
+      <a href="/careers" style={{ textDecoration: "none" }}>
+        <span 
+          className="nav-item"
+          style={{
+            color: isScrolled ? " #1e293b" : "rgb(0, 0, 0)",
+            fontSize: isScrolled ? "1.1rem" : "1.4rem",
+            transition: "all 0.3s ease",
+          }}
+        >
+          ฝึกงาน
+        </span>
+      </a>
+      <div className="divider" style={{
+        backgroundColor: isScrolled ? "rgb(115, 118, 122)" : "rgba(0, 0, 0, 0.5)",
         transition: "all 0.3s ease"
       }} />
       <a href="#contract" style={{ textDecoration: "none" }}>
@@ -891,7 +929,7 @@ const NavbarMain = () => {
           className="nav-item"
           style={{
             color: isScrolled ? " #1e293b" : "rgb(0, 0, 0)",
-            fontSize: isScrolled ? "1.2rem" : "1.4rem",
+            fontSize: isScrolled ? "1.1rem" : "1.4rem",
             transition: "all 0.3s ease",
           }}
         >
@@ -899,6 +937,8 @@ const NavbarMain = () => {
         </span>
       </a>
       <div />
+
+      
     </div>
   </div>
   );
