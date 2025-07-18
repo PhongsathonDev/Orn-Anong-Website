@@ -1,7 +1,7 @@
 
 
 // React Router
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { createBrowserRouter, RouterProvider, Navigate } from "react-router-dom";
 
 // Components
 import NavbarMain from "./components/Navigation-Bar";
@@ -28,7 +28,7 @@ import TransferPricing from "./Page/Services-page/TransferPricing";
 // Router Configuration
 const router = createBrowserRouter([
   // Home
-  { path: "/", element: <HomePage /> },
+  { path: "/", element: <Navigate to="/home" replace /> },
   { path: "/home", element: <HomePage /> },
 
   // Services

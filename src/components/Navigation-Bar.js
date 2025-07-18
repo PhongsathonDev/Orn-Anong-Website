@@ -257,7 +257,7 @@ const NavbarMain = () => {
                       fontWeight: "700", 
                       marginBottom: "16px",
                       fontSize: "16px",
-                      borderBottom: "3px solid #3b82f6",
+                      borderBottom: "3px solid #f63b3bff",
                       paddingBottom: "10px",
                       background: "linear-gradient(135deg, #3b82f6, #1d4ed8)",
                       WebkitBackgroundClip: "text",
