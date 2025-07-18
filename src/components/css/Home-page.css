@@ -1,4 +1,3 @@
-
 /* เคลื่อนไหวแบบ gradient พื้นหลัง */
 .bg-animated {
   position: absolute;
@@ -7,7 +6,7 @@
   z-index: -1;
   width: 100%;
   height: 100vh;
-  background: url(../image/home-bg.jpg) no-repeat center center;
+  background: url(../../image/home-bg.jpg) no-repeat center center;
   background-size: 150% 150%;
   animation: gradientAnimation 100s ease infinite;
   opacity: 0.7;

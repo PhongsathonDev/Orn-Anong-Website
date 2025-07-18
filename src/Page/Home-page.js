@@ -2,11 +2,11 @@ import React, { useState, useEffect } from "react";
 // ...existing code...
 import { FaFacebookSquare, FaLine, FaEnvelope } from "react-icons/fa";
 import { motion } from "framer-motion";
-import OurServicesSection from "./OurServicesSection";
+import OurServicesSection from "./Home-page/OurServicesSection";
 import logoImage from "../image/favicon.jpg";
-import "../css/Home-page.css";
+import "../components/css/Home-page.css";
 import about from "../image/about.webp";
-import Main from "./Main";
+import Main from "./Home-page/LandingPage";
 
 function HomePage() {
   // ใช้ localStorage เพื่อแสดง splash เฉพาะครั้งแรก

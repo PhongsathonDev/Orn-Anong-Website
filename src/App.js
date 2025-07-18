@@ -1,61 +1,54 @@
 
+
+// React Router
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
-import logo from "./logo.svg";
 // Components
-import NavbarMain from "./components/NavbarMain";
+import NavbarMain from "./components/Navigation-Bar";
 import Footer from "./components/Footer";
 import ContactWidget from "./components/ContactWidget";
-import Main from "./components/Main";
-import Career from "./components/Career";
-import NotFoundPage from "./components/NotFoundPage";
-import OurServicesSection from "./components/OurServicesSection";
 
 // Pages
-import HomePage from "./components/Home-page";
-import WelcomePage from "./components/Welcome-page";
+import HomePage from "./Page/Home-page";
+import Main from "./Page/Home-page/LandingPage";
+import Career from "./Page/Career";
+import NotFoundPage from "./Page/NotFoundPage";
+import OurServicesSection from "./Page/Home-page/OurServicesSection";
+import Certificate from "./Page/Home-page/Certificate";
 
-// Services
-import Legal from "./components/services/Legal";
-import BusinessLaw from "./components/services/Legal/BusinessLaw";
-import TaxLaw from "./components/services/Legal/TaxLaw";
-import OtherLaw from "./components/services/Legal/OtherLaw";
-import Litigation from "./components/services/Legal/Litigation";
-import Testament from "./components/services/Legal/Testament";
-import TransferPricing from "./components/services/Legal/TransferPricing";
-import AccountingPayroll from "./components/services/Accounting-Payroll";
-import Audit from "./components/services/Audit";
-import InternalAudit from "./components/services/InternalAudit";
-import WebIT from "./components/services/WebIT";
-import Certificate from "./components/Certificate";
+// Services Pages
+import BusinessLaw from "./Page/Services-page/BusinessLaw";
+import TaxLaw from "./Page/Services-page/TaxLaw";
+import OtherLaw from "./Page/Services-page/OtherLaw";
+import Litigation from "./Page/Services-page/Litigation";
+import Testament from "./Page/Services-page/Testament";
+import TransferPricing from "./Page/Services-page/TransferPricing";
 
 
+// Router Configuration
 const router = createBrowserRouter([
+  // Home
   { path: "/", element: <HomePage /> },
   { path: "/home", element: <HomePage /> },
 
   // Services
-  { path: "/services/legal", element: <Legal /> },
   { path: "/services/business-law", element: <BusinessLaw /> },
   { path: "/services/tax-law", element: <TaxLaw /> },
   { path: "/services/other-law", element: <OtherLaw /> },
   { path: "/services/litigation", element: <Litigation /> },
   { path: "/services/transfer-pricing", element: <TransferPricing /> },
   { path: "/services/testament", element: <Testament /> },
-  { path: "/services/accounting-payroll", element: <AccountingPayroll /> },
-  { path: "/services/audit", element: <Audit /> },
-  { path: "/services/internal-audit", element: <InternalAudit /> },
-  { path: "/services/web-it", element: <WebIT /> },
-  
-  // Other pages
+
+  // Other Pages
   { path: "/careers", element: <Career /> },
   { path: "/services", element: <OurServicesSection /> },
   { path: "/main", element: <Main /> },
-  { path: "/*", element: <NotFoundPage /> },
   { path: "/certificate", element: <Certificate /> },
-
+  { path: "/*", element: <NotFoundPage /> },
 ]);
 
+
+// Main App Component
 function App() {
   return (
     <div className="App">

@@ -1,6 +1,6 @@
 import React from 'react';
 import { ReactTyped } from 'react-typed';
-import './css/Main.css';
+import '../../components/css/Main.css';
 
 function Main() {
   return (

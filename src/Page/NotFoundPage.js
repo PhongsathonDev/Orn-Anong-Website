@@ -2,7 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { Button } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
-import "../css/Home-page.css"; // ใช้ class .bg-animated ด้วย
+import "../components/css/Home-page.css";
 
 function NotFoundPage() {
   const navigate = useNavigate();
