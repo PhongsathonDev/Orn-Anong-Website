@@ -27,6 +27,7 @@ import AccountingPayroll from "./components/services/Accounting-Payroll";
 import Audit from "./components/services/Audit";
 import InternalAudit from "./components/services/InternalAudit";
 import WebIT from "./components/services/WebIT";
+import Certificate from "./components/Certificate";
 
 
 const router = createBrowserRouter([
@@ -45,12 +46,14 @@ const router = createBrowserRouter([
   { path: "/services/audit", element: <Audit /> },
   { path: "/services/internal-audit", element: <InternalAudit /> },
   { path: "/services/web-it", element: <WebIT /> },
-
+  
   // Other pages
   { path: "/careers", element: <Career /> },
   { path: "/services", element: <OurServicesSection /> },
   { path: "/main", element: <Main /> },
   { path: "/*", element: <NotFoundPage /> },
+  { path: "/certificate", element: <Certificate /> },
+
 ]);
 
 function App() {
